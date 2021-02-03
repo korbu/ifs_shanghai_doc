@@ -1,5 +1,7 @@
 = EB Corbos StarterKit 安装说明
-:toc:
+:sectnums:
+:toc: left
+:toc-title: 目录
 
 == 解压安装包
 ....
