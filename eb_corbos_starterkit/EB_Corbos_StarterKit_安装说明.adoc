@@ -1,4 +1,5 @@
 = EB Corbos StarterKit 安装说明
+:toc:
 
 == 解压安装包
 ....
@@ -14,7 +15,7 @@ tar xf ~/Downloads/adg-eblinux-standard-delivery.tar.gz
 路径建议使用默认路径 ~/ara/eb
 
 == 安装corbos
-在安装之前需要在~/.bashrc最后一行添加如下环境变量：
+在安装之前需要在 `~/.bashrc` 最后一行添加如下环境变量：
 ....
 export workspace=~/ara/eb/workspace/
 ....
@@ -28,16 +29,18 @@ ara-cli SdkMgr --overwrite --activate --update-packages adg.*.tar.gz
 ....
 corbos-studio-launcher --target-os eblinux
 ....
-点击图标可执行程序路径： ~/ara/eb/tools/studio/ADG-2.2/EB_corbos_Studio
-选择一个自己的workspace路径，下面我的workspace路径为：~/ara/eb/workspace
+点击图标可执行程序路径： `~/ara/eb/tools/studio/ADG-2.2/EB_corbos_Studio`
+选择一个自己的workspace路径，下面我的workspace路径为：`~/ara/eb/workspace`
 
 == 准备adg demo
-adg demo路径为： ~/ara/eb/adaptivecore/source/git/ara_Demos/impl/demonstrator/templates/demos/
-把5个demos拷贝进workspace。我放在workspace/adg/demo下
+adg demo路径为： `~/ara/eb/adaptivecore/source/git/ara_Demos/impl/demonstrator/templates/demos/`
+把5个demos拷贝进workspace。我放在 `workspace/adg/demo` 下
 
 == 根据所给的demo创建工程
 以Sensor_Preprocessor为例：
+....
 ara-cli Application --generate-cmake --app ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/ --target-os eblinux --target-platform qemu-x86 
+....
 
 == 导入工程
 import->工程路径
