@@ -2,8 +2,10 @@
 :sectnums:
 :toc: left
 :toc-title: 目录
+:imgdir: ../img/eb_corbos_starterkit
 
 == 解压安装包
+image:{imgdir}/run_installer_sh.png[test]
 ....
 mkdir -p /tmp/delivery
 cd /tmp/delivery
