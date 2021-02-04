@@ -5,7 +5,6 @@
 :imgdir: ../img/eb_corbos_starterkit
 
 == 解压安装包
-image:{imgdir}/run_installer_sh.png[test]
 ....
 mkdir -p /tmp/delivery
 cd /tmp/delivery
@@ -17,6 +16,7 @@ tar xf ~/Downloads/adg-eblinux-standard-delivery.tar.gz
 ./adg-standard-installer-ADG-2.2.sh
 ....
 路径建议使用默认路径 ~/ara/eb
+image:{imgdir}/run_installer_sh.png[test]
 
 == 安装corbos
 在安装之前需要在 `~/.bashrc` 最后一行添加如下环境变量：
