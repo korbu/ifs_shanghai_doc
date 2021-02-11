@@ -1,3 +1,2 @@
-theme: jekyll-theme-cayman
 - name: asciidoctor-ghpages
   uses: manoelcampos/asciidoctor-ghpages-action@v2
