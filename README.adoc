@@ -2,11 +2,7 @@
 
 ## IFS Shanghai Document Center
 This folder contains the [asciidoc](https://asciidoc.org) source code for all kinds of documents to be shared to customers
-link:./eb_corbos_starterkit/EB_Corbos_StarterKit_安装说明.html[EB_Corbos_StarterKit_安装说明]
 
-## How to build ea documentation manually
-Windows is required to build the documentation.
-To build this guide manually switch to /tools/ea and enter
-```
-tbd
-```
+文档清单::
+  EB corbos studio:::
+    . link:./eb_corbos_starterkit/EB_Corbos_StarterKit_安装说明.html[EB_Corbos_StarterKit_安装说明]
