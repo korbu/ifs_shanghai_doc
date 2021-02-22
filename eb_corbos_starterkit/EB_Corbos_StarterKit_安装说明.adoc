@@ -3,6 +3,7 @@
 :toc: left
 :toc-title: 目录
 :imgdir: ../img/eb_corbos_starterkit
+:source-highlighter: pygments
 
 == 安装步骤
 
@@ -11,11 +12,12 @@
 如需在windows系统上使用Corbos,需要先安装虚拟机（例如 virtal box）,再在虚拟机上安装linux系统。
 
 === 解压安装包
-....
+[source%nowrap, bash]
+----
 mkdir -p /tmp/delivery
 cd /tmp/delivery
 tar xf ~/Downloads/adg-eblinux-standard-delivery.tar.gz
-....
+----
 
 === 准备环境
 ....
