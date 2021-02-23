@@ -1,0 +1,108 @@
+[[Docker]]
+=== Docker
+
+==== 概述
+
+EB xelor提供docker容器以用来开发并构建EB xelor交付物，容器基于(Yocto Project/OECore tools) and Ubuntu 18.04，包含基本的开发工具，例如python3，git，git-lfs，repo tool，Conan。
+
+容器文件dockerfile位于`config/docker/Dockerfile`。
+
+==== 安装并运行EB xelor docker容器
+
+前提条件:
+
+* Linux机器或运行Linux的虚拟机。我们使用的是Ubuntu。
+
+Step 1 +
+安装Docker CE:
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+创建组，并将你的用户名添加到组中:
+
+....
+groupadd docker
+sudo usermod -aG docker $USER
+....
+注销登陆/重启后，运行`docker run hello-world`测试是否安装成功。
+
+Step 2 +
+获取EB xelor代码, 请参阅 <<Obtain>>.
+
+Step 3 +
+运行EB xelor docker容器
+
+如果没有EB xelor docker镜像，可以通过运行这个脚本自动创建:
+....
+tools/docker/run_docker.sh
+....
+
+创建镜像后，`run_docker.sh`会检查各项配置并在命令行中报告发现的问题。
+
+.Configuration and messages from `run_docker.sh` scirpt
+|===
+|Message|Explanation|Solution/Action required
+
+|ACTION NEEDED: Git commit template is missing on host
+|In EB xelor we use a common commit template. The script checks if the git client is configured to use it.
+|In case you contribute to the sources of EB xelor, you shall install the git commit template with the indicated command. Otherwise you can ignore this message.
+
+|SETUP: Set/update Conan authentication for remote(s) (Artifactory)
+|The script installs the conan configuration from `config/conan/config` and is asking conan to verify the access to the used Artifactory repositories.
+|Provide your credentials. In case you use different Artifactory repositories, you shall modify `config/conan/config/remotes.txt` and rerun the `run_docker.sh` script.
+
+|SETUP: JFrog configuration needed, host is missing file
+|We use the JFrog command line client to download artifacts from Artifactory.
+|Please enter your credentials as indicated. Only fill User and Password and use default values for all other questions.
+
+|===
+
+==== 目录结构
+在EB xelor docker容器中，`/workdir`映射到的是你运行`run_docker.sh`的路径.
+
+`run_docker.sh`会在这个文件夹下创建Conan缓存(`.conan`
+directory)，即`/workdir/.conan`。因此，最好不要在源码路径运行这个脚本。
+
+示例如下 (以克隆EBcore-main仓库为例):
+....
+mkdir ebxelor
+cd ebxelor
+git clone git@gitext.elektrobitautomotive.com:EBcore/EBcore-main.git
+./EBcore-main/tools/docker/run_docker.sh
+....
+Conan cache目录在`ebxelor/.conan`，对应的docker容器中路径是`/workdir/.conan`。
+
+==== Troubleshooting
+
+[TIP]
+====
+The source directory must not belong to user or group root. In this case there will be a message like this:
+....
+Refusing to use a gid of 0
+....
+====
+
+[TIP]
+====
+In case of DNS problems with NAT in VirtualBox:
+
+Ubuntu 18.04 uses a local DNS cache 127.0.0.53. That will not work
+inside a container, so Docker will default to Google's 8.8.8.8 DNS server,
+which may break for people behind a firewall.
+
+`/etc/resolv.conf` is actually a symlink (`ls -l /etc/resolv.conf`)
+which points to `/run/systemd/resolve/stub-resolv.conf` (127.0.0.53)
+by default in Ubuntu 18.04.
+
+Just change the symlink to point to `/run/systemd/resolve/resolv.conf`,
+which lists the real DNS servers:
+....
+sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
+....
+
+Verify on the host: `cat /etc/resolv.conf`
+
+Additionally you can change the VirtualBox DNS:
+....
+VBoxManage modifyvm "VM name" --natdnshostresolver1 on
+....
+====

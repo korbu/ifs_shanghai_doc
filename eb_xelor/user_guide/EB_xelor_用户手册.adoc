@@ -1,0 +1,14 @@
+= EB xelor 用户手册
+:sectnums:
+:toc: left
+:toc-title: 目录
+:imgdir: ../img/eb_xelor/eb_xelor_user_guide
+:source-highlighter: pygments
+
+== 交付物
+include::Obtain.adoc[]
+include::Configuration.adoc[]
+include::Supplies.adoc[]
+
+== 开发工具
+include::Docker.adoc[]
