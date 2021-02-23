@@ -6,3 +6,5 @@ This folder contains the [asciidoc](https://asciidoc.org) source code for all ki
 文档清单::
   EB corbos studio:::
     . link:./eb_corbos_starterkit/EB_Corbos_StarterKit_安装说明.html[EB_Corbos_StarterKit_安装说明]
+  EB xelor:::
+    . link:./eb_xelor/user_guide/EB_xelor_用户手册.html[EB_xelor_用户手册]
