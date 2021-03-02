@@ -159,27 +159,25 @@ your_user valeria-test
 ....
 以上命令中出现的选项：
 
-* `-b missing -M build`: this instructs Valeria to build the packages and use the Conan build policy `missing`. This builds only packages that are not yet in the local Conan cache
-* `-m /workdir/EBxelor-2020.12/config/valeria/s32g/manifests/buildmanifest_linuxbuild.xml`: the build manifest that shall be used.
-* `-p /workdir/EBxelor-2020.12/config/valeria/s32g/profiles`: the folder to the profiles
-* `-r /workdir/EBxelor-2020.12/pkg`: the folder of all recipes, sub-folders are also parsed for recipes
-* `-cr eb_core-devdrops`: the name of the Artifactory repository, known by `conan remote`. In EB xelor development we use a repository called `eb_core-devdrops` for development work.
-* `-ccr EBxelor/2020.12:eb_core-releases`: this instructs Valeria to copy existing (equal) packages from user `EBxelor`, channel `2020.12`, repo `eb_core-releases`. In EB xelor development we fill this user, channel, and repository with our releases.
-* `-cdd`: this instructs Valeria to delete an existing build directory.
-* `your_user valeria-test`: the Conan user and channel
+* `-b missing -M build`: 构建本地Conan缓存没有的包，使用的构建参数是 `missing`
+* `-m /workdir/EBxelor-2020.12/config/valeria/s32g/manifests/buildmanifest_linuxbuild.xml`: 使用的build manifest 
+* `-p /workdir/EBxelor-2020.12/config/valeria/s32g/profiles`: profile路径
+* `-r /workdir/EBxelor-2020.12/pkg`: recipe路径，子目录也会被解析
+* `-cr eb_core-devdrops`:  `conan remote` 会使用到的Artifactory仓库。EB xelor的开发使用 `eb_core-devdrops` 仓库
+* `-ccr EBxelor/2020.12:eb_core-releases`: 从用户 `EBxelor` ，channel `2020.12` ，仓库 `eb_core-releases` 拷贝已有（相同）的包
+* `-cdd`: 删除已有的构建目录
+* `your_user valeria-test`: Conan 用户 和 channel
 
-In subsequent calls, the parameter `-ccr` can be omitted.
-It is used to initially populate the new channel `user/valeria-test`.
+后续的调用中， `-ccr` 选项可以忽略，它是第一次创建新channel  `user/valeria-test` 时用到的。
 
-If you want to upload the produced packages to the remote repository, then add the option `-n 0`.
+如果你想上传包到远程仓库，使用 `-n 0` 命令。
 
 ===== Windows
-To build the packages that require a Windows build machine, we assume that the sources are placed in a folder `./EBxelor-2020.12`.
-We create a working folder for Valeria parallel to it `./valeria-build`.
+假定源代码位于 `./EBxelor-2020.12` ，我们在同目录创建一个工作目录 `./EBxelor-2020.12` 。
 
-We also assume that we call the build inside a bash shell, e.g. git bash or cygwin.
+同时，我们也假定构建命令在例如git bash或cygwin这样的bash shell中执行。
 
-For detailed instructions how to setup the windows build environment, please refer to chapter <<EBtresos>>.
+在Windows环境下的详细构建指导，请参考 <<EBtresos>> 。
 
 ....
 cd valeria-build
@@ -194,12 +192,12 @@ buildmanifest_windowsbuild.xml \
 your_user valeria-test
 ....
 
-The arguments are the same as in the Linux builds and described above.
+参数定义和上方Linux环境构建时相同。
 
 
-===== Download a release
-You can also download a release by calling valeria directly with the EB xelor release user, channel, and repository.
-Example to download all packages that are built in Linux, for the S32G SoC and release `2020.12`:
+===== 下载发布包
+你也可以调用Valeria直接下载EB xelor发布包。
+以S32G的 `2020.12` Linux环境发布包为例:
 ....
 mkdir -p /workdir/valeria/s32g
 cd /workdir/valeria/s32g
@@ -212,21 +210,19 @@ buildmanifest_linuxbuild.xml \
 -cdd \
 EBxelor 2020.12
 ....
-In this case we omit the `-ccr` command. The conan packages will not be copied to a separate conan user/channel.
-Instead you will use user `EBxelor` and channel `2020.12`, as well as repository `eb_core-releases`.
-You will not be able to upload your packages to Artifactory, as the `eb_core-releases` repository is reserved
-for EB xelor releases.
+这个时候我们不使用 `-ccr` ，conan包不会被拷贝到另一个user/channel当中。
+你需要使用用户 `EBxelor` ，channel `2020.12`, 仓库 `eb_core-releases` 。
+当然，你也无法将包上传到 `eb_core-releases` 中。
 
 [TIP]
 ====
-If your local source code (directory `/workdir/EBxelor-2020.12`) is identical to the release, e.g. `EBxelor 2020.12`, 
-then there is no rebuild executed of any package. Instead the packages are directly downloaded from Artifactory.
+如果本地源代码(目录 `/workdir/EBxelor-2020.12`) 与发布（例如 `EBxelor 2020.12` ）完全相同, 那么这些包将直接从Artifactory下载，而不会rebuild。
 
-If you have a local change in a recipe, then this recipe will be rebuilt.
+如果本地recipe有改动，那么这个recipe会被重新构建。
 ====
 
-Example to download all packages that are built in Windows, for the S32G SoC and release `2020.12`
-(please refer to chapter <<EBtresos>> for conan configuration in Windows):
+以S32G的 `2020.12` Windows环境发布包为例:
+(更多Windows环境下Conan配置信息，请参考 <<EBtresos>> ):
 ....
 cd valeria-build
 python ../EBxelor-2020.12/tools/valeria/valeria.py -b missing -M build \
@@ -241,6 +237,5 @@ EBxelor 2020.12
 
 [TIP]
 ====
-If you do not want to rebuild the software, you can also download the binaries that have been built in Linux by running Valeria in Windows and vice versa.
-Just replace the `buildmanifest_windowsbuild.xml` by `buildmanifest_linuxbuild.xml`. This way you can download all artifacts for the target in the same environment.
+如果不想触发重新构建，你可以运行Valeria命令直接下载二进制文件，对于Windows，Manifest文件是 `buildmanifest_windowsbuild.xml` 对于Linux，则是 `buildmanifest_linuxbuild.xml` 。
 ====
