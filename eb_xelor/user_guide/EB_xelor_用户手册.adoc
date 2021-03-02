@@ -13,3 +13,26 @@ include::Supplies.adoc[]
 == 开发工具
 include::Docker.adoc[]
 include::Valeria.adoc[]
+include::Development.adoc[]
+
+include::Flashing.adoc[]
+
+include::System_Analysis.adoc[]
+
+== EB xelor详细介绍
+
+include::Firmware.adoc[]
+
+include::EBLinux.adoc[]
+
+include::Hypervisor.adoc[]
+
+include::EB_ADG.adoc[]
+
+include::EBtresos.adoc[]
+
+include::Diagnostic.adoc[]
+
+include::Network.adoc[]
+
+include::Glossary.adoc[]

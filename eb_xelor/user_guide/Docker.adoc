@@ -5,7 +5,7 @@
 
 EB xelor提供docker容器以用来开发并构建EB xelor交付物，容器基于(Yocto Project/OECore tools) and Ubuntu 18.04，包含基本的开发工具，例如python3，git，git-lfs，repo tool，Conan。
 
-容器文件dockerfile位于`config/docker/Dockerfile`。
+容器文件dockerfile位于 `config/docker/Dockerfile` 。
 
 ==== 安装并运行EB xelor docker容器
 
@@ -23,7 +23,7 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/
 groupadd docker
 sudo usermod -aG docker $USER
 ....
-注销登陆/重启后，运行`docker run hello-world`测试是否安装成功。
+注销登陆/重启后，运行 `docker run hello-world` 测试是否安装成功。
 
 Step 2 +
 获取EB xelor代码, 请参阅 <<Obtain>>.
