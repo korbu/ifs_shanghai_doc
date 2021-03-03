@@ -91,9 +91,9 @@ And when implementation is finished, call conan again.
 
 [TIP]
 ====
-To create a new recipe (conanfile.py), use the EB xelor template by using the command:
+基于EB xelor模板创建一个新的recipe文件 (conanfile.py):
 ....
 conan new --template pkg mypackage/1.2.3
 ....
-Then continue with the conan package development workflow as described in step 2 to develop the package.
+然后遵从step 2中的conan包开发工作流来开发你自己的包。
 ====
