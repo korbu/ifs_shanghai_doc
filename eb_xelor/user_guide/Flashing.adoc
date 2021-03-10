@@ -132,36 +132,36 @@ Fastboot传输需要串口链接做初始化。
 包含烧写区块，分组，网络，内存地址等信息。
 配置文件配置项如下:
 
-flash_area:: JSON objects named like the areas, each consisting of:
-* filename: Name of the image file
-* files: In case of `file_installation` protocol, the list of files
-* flash_address: Start address (hex with 0x prefix, at least two digits)
-* mem_size: Size of the area (hex with 0x prefix, at least two digits) - only necessary for S32G targets
-* block_size: Necessary for erasing (and consequently for writing) memory areas (hex with 0x prefix, at least two digits) - S32G only
-* memory_type: `QSPI`, `eMMC`, `SD`, or `file`
-* RAM_address: RAM mapping - H3 only
-* supported_protocol: `serial`, `fastboot`, or `file_installation`
-* install_script:  In case of `file_installation` protocol, a script that is executed on the target after file transfer
-flash_writer:: Renesas flash writer or NXP flash tool file name and location relative to `path_to_firmware`
-flash_algorithms:: JSON key/value pairs, each consisting of a memory type as defined in `flash_areas` and a file for the flashing algorithm. File location is considered relative to `path_to_firmware` - S32G only
-target_application:: Target application binary. File location is considered relative to `path_to_firmware` - S32G only
+flash_area:: 烧写内容:
+* filename: 文件名
+* files: 如果使用 `file_installation` 选项, 则代表文件列表
+* flash_address: 起始地址 (以0x开头的十六进制数, 至少两位)
+* mem_size: 大小 (以0x开头的十六进制数, 至少两位) - only necessary for S32G targets
+* block_size: block大小，Necessary for erasing (and consequently for writing) memory areas (hex with 0x prefix, at least two digits) - 仅针对S32G
+* memory_type: `QSPI`, `eMMC`, `SD`, 或者 `file`
+* RAM_address: RAM 映射地址 - 仅针对H3
+* supported_protocol: `serial`, `fastboot`, 或 `file_installation`
+* install_script:  如果使用 `file_installation` 选项, 文件传输结束后执行的脚本
+flash_writer:: Renesas flash writer 或 NXP flash tool 文件路径， 路径是 `path_to_firmware` 的相对路径
+flash_algorithms:: 以JSON键值对形式表示, 代表烧写区域/烧写算法，其路径为 `path_to_firmware` 的相对路径- 仅针对S32G
+target_application:: 目标程序二进制文件。 其路径为 `path_to_firmware` 的相对路径- 仅针对S32G
 group:: JSON objects for groups, each consisting of a single list of area names. Necessary if multiple flash areas of the same type shall be flashed with one command.
 partition_table:: eMMC partitions, each with a name and a size. Optionally the first partition can have a start address. Only necessary for the `fastboot` flash method.
-path_to_firmware:: base path for image files and flash writer
-target_ip_address:: IP address for fastboot UDP usage - `fastboot` only
-target_mac_address:: MAC address of the target. Must fit the preconfigured address! - `fastboot` only
-target_username:: SSH access username - `file_installation` only
-target_password:: SSH access password - `file_installation` only
+path_to_firmware:: 镜像文件和flash writer的base路径
+target_ip_address:: fastboot UDP传输时使用的IP地址 - `fastboot` 时有用
+target_mac_address:: 目标MAC地址 - `fastboot` only
+target_username:: SSH 登陆时用户名 - `file_installation` only
+target_password:: SSH 登陆时密码 - `file_installation` only
 target_tmp_folder:: A temporary folder on the target to store files - `file_installation` only
 use_external_emmc:: Whether to use external eMMC - not tested yet
 version:: Config file version - not necessary for flashing, but 
-MX25UM51245G_MEM_START:: Start address of the QSPI memory - S32G only
-MX25UM51245G_MEM_BLOCK_SIZE:: Memory block size - S32G only
-MX25UM51245G_MEM_SIZE:: Memory size of the QSPI memory - S32G only
+MX25UM51245G_MEM_START:: QSPI memory起始地址 - S32G only
+MX25UM51245G_MEM_BLOCK_SIZE:: Memory块大小 - S32G only
+MX25UM51245G_MEM_SIZE:: QSPI memory大小 - S32G only
 
 If a parameter is missing or specified incorrectly, it will very probably lead to an error in the flashing execution.
 
-*Examples* can be found in
+示例可参考：
 ....
 EBcore-main/test/software/config/
 EBcore-main/tools/lib/python/ebcoreflashlib/examples/
@@ -169,8 +169,8 @@ EBcore-main/tools/lib/python/ebcoreflashlib/examples/
 
 [NOTE]
 ====
-In case you are defining absolute paths inside the configuration file, the path_to_firmware
-setting has to be kept empty!
+如果你在配置文件中使用绝对路径，请将 `path_to_firmware`
+留空！
 ====
 
 ==== 命令行调用
