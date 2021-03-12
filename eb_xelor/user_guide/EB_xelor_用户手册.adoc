@@ -1,6 +1,7 @@
 = EB xelor 用户手册
 :sectnums:
 :toc: left
+:toclevels: 4
 :toc-title: 目录
 :imgdir: ../img/eb_xelor/eb_xelor_user_guide
 :source-highlighter: pygments
