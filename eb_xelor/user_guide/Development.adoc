@@ -12,14 +12,12 @@
 开发时，建议使用你自己的用户和channel。
 ====
 
-
 [TIP]
 ====
 EB xelor团队使用特定的仓库用来开发。
 EB xelor持续集成系统使用 `EBcore/merge-EBCORE-1234` 来做合并验证,  `EBCORE-1234` 是git仓库的一个分支名。
 本地使用同样的配置时，本地开发和持续集成系统会关联起来，方便重用包而不用重新构建。
 ====
-
 
 [TIP]
 ====
@@ -28,8 +26,6 @@ EB xelor持续集成系统使用 `EBcore/merge-EBCORE-1234` 来做合并验证, 
 * 如果开发只涉及部分EB xelor代码，创建一个精简版Valeria build manifest
 * 利用 `--build-policy` 指定你开发的包，pattern可参考
 ====
-
-
 
 ==== Step 2: 使用Conan工作流
 运行完Valeria命令后，使用 https://docs.conan.io/en/latest/developing_packages/package_dev_flow.html[conan package 开发工作流].
@@ -73,8 +69,7 @@ conan build --build-folder build .
 
 [TIP]
 ====
-For further development, it makes often sense to first start an incremental build with the build system of the integrated product.
-For example we can call
+后续开发中，建议先用构建系统构建一次集成好的包，然后做增量（开发）构建。例如：
 ....
 cd build/u-boot-2018.09-rcar-3.9.5
 export ARCH=arm64
@@ -86,7 +81,7 @@ gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu/bin/\
 aarch64-linux-gnu-
 make -j 4
 ....
-And when implementation is finished, call conan again.
+开发完成后，再次调用conan。
 ====
 
 [TIP]
