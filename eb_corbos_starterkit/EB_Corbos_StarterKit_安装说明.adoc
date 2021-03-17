@@ -12,6 +12,7 @@
 如需在windows系统上使用Corbos,需要先安装虚拟机（例如 virtal box）,再在虚拟机上安装linux系统。
 
 === 解压安装包
+==== ADG-2.2（包含2.2）之前的版本
 [source%nowrap, bash]
 ----
 mkdir -p /tmp/delivery
@@ -19,9 +20,23 @@ cd /tmp/delivery
 tar xf ~/Downloads/adg-eblinux-standard-delivery.tar.gz
 ----
 
+==== ADG-2.3 之后的版本，以qemu-x86为例
+[source%nowrap, bash]
+----
+mkdir -p /tmp/delivery
+cd /tmp/delivery
+tar xf ~/Downloads/ask-ADG-2.3-eblinux-bin.tar.gz
+tar xf ~/Downloads/ask-ADG-2.3-eblinux-qemu-x86.tar.gz
+----
+
 === 准备环境
+执行installer脚本
 ....
 ./adg-standard-installer-ADG-2.2.sh
+....
+或者
+....
+adg-ADG-2.3-installer.sh
 ....
 路径选择时建议使用默认路径 ~/ara/eb，直接按下Enter即可。
 执行完毕界面如下图所示。
