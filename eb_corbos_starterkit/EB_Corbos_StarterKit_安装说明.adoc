@@ -409,3 +409,9 @@ systemctl restart com-daemon-container
 ....
 来重启com-daemon
 image:{imgdir}/Picture20.png[test]
+
+=== qemu 与外部网络通信 
+需要将qemu 的网卡作为master 来桥接， 执行
+sudo ip link set ens33 master ara_br
+其中ens33 是host 的网卡
+....
