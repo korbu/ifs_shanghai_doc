@@ -66,6 +66,9 @@ corbos-studio-launcher --target-os eblinux
 ==== 点击图标操作
 图标路径： `~/ara/eb/tools/studio/ADG-2.2/EB_corbos_Studio`
 
+==== 安装了多个corbos/adg版本
+默认会打开最新安装的corbos版本，如果有特殊需求，可以修改~/.ara/config.ini文件的配置
+
 === 选择workspace
 自行选择workspace路径，下图是示例路径：`~/ara/eb/workspace`
 image:{imgdir}/Picture2.png[test]
