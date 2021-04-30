@@ -1,5 +1,35 @@
 [[DemoAraCom]]
-=== 根据所给的demo创建工程
+=== 交通信号场景模拟应用
+本应用包含以下Demo： +
+
+.交通信号场景模拟应用demo列表
+|===
+|Demo名称 |功能 |相关模块 
+
+|Sensor_handler
+|Cell in column 2, row 1
+|ara:Com, ara:EM, ara:PM, ara:Phm
+
+|Sensor_Preprocessor
+|Cell in column 2, row 2
+|ara:Com, ara:EM, ara:Phm
+
+|Sensor_Manager
+|Cell in column 2, row 2
+|ara:Com, ara:EM, ara:Phm
+
+|Sensor_dataProcessor
+|Cell in column 2, row 2
+|ara:Com, ara:EM, ara:PM
+
+|Display_Manager
+|Cell in column 2, row 2
+|ara:Com, ara:EM
+
+|phm_callback
+|Cell in column 2, row 2
+|ara:EM
+|===
 
 ==== 命令行操作
 ....
