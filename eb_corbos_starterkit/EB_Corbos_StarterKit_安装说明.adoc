@@ -15,7 +15,7 @@ include::UsingCLI.adoc[]
 include::UsingGUI.adoc[]
 
 == 使用Starterkit自带的Demo
-如不做特殊说明，以下demo都以CLI方式进行演示
+如不做特殊说明，以下demo都是基于ADG-2.4并以CLI方式进行演示
 include::DemoAraCom.adoc[]
 
 == 新建项目
