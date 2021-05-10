@@ -31,6 +31,10 @@
 |ara:EM
 |===
 
+image:{imgdir}/DemoAraCom_TrafficSign.png[test]
+
+
+
 ==== 命令行操作
 ....
 ara-cli Application --generate-cmake --app ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/ --target-os eblinux --target-platform qemu-x86 

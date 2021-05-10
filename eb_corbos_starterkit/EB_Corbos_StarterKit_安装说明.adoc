@@ -2,6 +2,7 @@
 :sectnums:
 :toc: left
 :toc-title: 目录
+:toclevels: 4
 :imgdir: ../img/eb_corbos_starterkit
 :source-highlighter: pygments
 
