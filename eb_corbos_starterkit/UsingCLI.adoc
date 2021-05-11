@@ -55,3 +55,51 @@ ara-cli Application --generate-cmake --app ~/existing_project --target-os <targe
 
 ===== 使用EB corbos的示例demo
 TBD
+
+==== 配置工程
+TBD
+
+==== 运行plugets
+TBD
+
+==== 工程构建
+TBD
+
+==== 工程验证
+TBD
+
+=== 使用QEMU
+TBD
+
+=== 使用R-Car H3
+TBD
+
+=== Working with a target host
+TBD
+
+=== 使用容器
+TBD
+
+=== 使用UCM包
+TBD
+
+=== Perform system and user space tracing with LTTng and perf
+TBD
+
+=== Working with an application binary
+TBD
+
+=== Working with ADG modules
+TBD
+
+=== 构建EB Linux镜像
+TBD
+
+=== Starterkit
+TBD
+
+=== Troubleshooting
+TBD
+
+=== 卸载Starkerkit
+TBD

@@ -7,32 +7,31 @@
 |Demo名称 |功能 |相关模块 
 
 |Sensor_handler
-|Cell in column 2, row 1
+|TBD
 |ara:Com, ara:EM, ara:PM, ara:Phm
 
 |Sensor_Preprocessor
-|Cell in column 2, row 2
+|TBD
 |ara:Com, ara:EM, ara:Phm
 
 |Sensor_Manager
-|Cell in column 2, row 2
+|TBD
 |ara:Com, ara:EM, ara:Phm
 
 |Sensor_dataProcessor
-|Cell in column 2, row 2
+|TBD
 |ara:Com, ara:EM, ara:PM
 
 |Display_Manager
-|Cell in column 2, row 2
+|TBD
 |ara:Com, ara:EM
 
 |phm_callback
-|Cell in column 2, row 2
+|TBD
 |ara:EM
 |===
 
-image:{imgdir}/DemoAraCom_TrafficSign.png[test]
-
+image:{imgdir}/DemoAraCom_TrafficSign.png[DemoAraCom_TrafficSign, title="Traffic Sign Scenario"]
 
 
 ==== 命令行操作
