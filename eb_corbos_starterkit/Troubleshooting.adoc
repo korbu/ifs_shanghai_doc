@@ -22,7 +22,7 @@ sudo ip link set ens33 master ara_br
 其中ens33 是host 的网卡
 
 === ipv4 支持
-corbos studio 默认支持ipv6 , 如果想使用ipv4 , 需要手动启动com-daemon，配置相应的ipv4 地址。以qemu1 为例：
+EB corbos studio 默认支持ipv6 , 如果想使用ipv4 , 需要手动启动com-daemon，配置相应的ipv4 地址。以qemu1 为例：
 
 登陆到qemu 
 ....

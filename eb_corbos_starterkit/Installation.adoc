@@ -1,6 +1,6 @@
 [[Installation]]
 === 准备系统
-安装Ubuntu 18.04（如需在windows系统上使用Corbos,需要先安装虚拟机），将Corbos安装包（示例版本为adg-eblinux-standard-delivery.tar.gz) 放置到 `~/Downloads` 。
+安装Ubuntu 18.04（如需在windows系统上使用EB corbos Starterkit,需要先安装虚拟机），将EB corbos Starterkit安装包（示例版本为adg-eblinux-standard-delivery.tar.gz) 放置到 `~/Downloads` 。
 
 === 解压安装包
 ==== ADG-2.2（包含2.2）之前的版本
@@ -40,14 +40,14 @@ gedit ~/.bashrc
 在 ~/.bashrc 最后一行添加如下环境变量： +
 export workspace=~/ara/eb/workspace/
 
-=== 安装corbos
+=== 安装EB corbos Studio
 ....
 ara-cli SdkMgr --overwrite --activate --update-packages adg.*.tar.gz
 ....
 在最后可根据自己的当前环境选择相应的 `platform:` 比如 `qemu-x86` 
 image:{imgdir}/Picture1.png[test]
 
-=== 运行corbos
+=== 运行EB corbos Studio
 
 ==== 命令行操作
 ....
@@ -58,7 +58,7 @@ corbos-studio-launcher --target-os eblinux
 图标路径： `~/ara/eb/tools/studio/ADG-2.2/EB_corbos_Studio`
 
 ==== 安装了多个corbos/adg版本
-默认会打开最新安装的corbos版本，如果有特殊需求，可以修改~/.ara/config.ini文件的配置
+默认会打开最新安装的EB corbos Stuido版本，如果有特殊需求，可以修改~/.ara/config.ini文件的配置
 
 === 选择workspace
 自行选择workspace路径，下图是示例路径：`~/ara/eb/workspace`
