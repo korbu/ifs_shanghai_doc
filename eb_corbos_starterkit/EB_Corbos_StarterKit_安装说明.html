@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.15">
+<title>EB corbos StarterKit 安装说明</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:50%;border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<style>
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+pre.pygments .hll { background-color: #ffffcc }
+pre.pygments { background: #f8f8f8; }
+pre.pygments .tok-c { color: #408080; font-style: italic } /* Comment */
+pre.pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+pre.pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
+pre.pygments .tok-o { color: #666666 } /* Operator */
+pre.pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+pre.pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
+pre.pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+pre.pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+pre.pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
+pre.pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
+pre.pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
+pre.pygments .tok-ge { font-style: italic } /* Generic.Emph */
+pre.pygments .tok-gr { color: #FF0000 } /* Generic.Error */
+pre.pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+pre.pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
+pre.pygments .tok-go { color: #888888 } /* Generic.Output */
+pre.pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+pre.pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+pre.pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+pre.pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
+pre.pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+pre.pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+pre.pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+pre.pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
+pre.pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+pre.pygments .tok-kt { color: #B00040 } /* Keyword.Type */
+pre.pygments .tok-m { color: #666666 } /* Literal.Number */
+pre.pygments .tok-s { color: #BA2121 } /* Literal.String */
+pre.pygments .tok-na { color: #7D9029 } /* Name.Attribute */
+pre.pygments .tok-nb { color: #008000 } /* Name.Builtin */
+pre.pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
+pre.pygments .tok-no { color: #880000 } /* Name.Constant */
+pre.pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
+pre.pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
+pre.pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+pre.pygments .tok-nf { color: #0000FF } /* Name.Function */
+pre.pygments .tok-nl { color: #A0A000 } /* Name.Label */
+pre.pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+pre.pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
+pre.pygments .tok-nv { color: #19177C } /* Name.Variable */
+pre.pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+pre.pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+pre.pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
+pre.pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
+pre.pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
+pre.pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
+pre.pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+pre.pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
+pre.pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
+pre.pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+pre.pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
+pre.pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+pre.pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
+pre.pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+pre.pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
+pre.pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+pre.pygments .tok-sx { color: #008000 } /* Literal.String.Other */
+pre.pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
+pre.pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
+pre.pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
+pre.pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+pre.pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
+pre.pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
+pre.pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
+pre.pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+pre.pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
+pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>EB corbos StarterKit 安装说明</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">目录</div>
+<ul class="sectlevel1">
+<li><a href="#_安装步骤">1. 安装步骤</a>
+<ul class="sectlevel2">
+<li><a href="#Installation">1.1. 准备系统</a></li>
+<li><a href="#_解压安装包">1.2. 解压安装包</a>
+<ul class="sectlevel3">
+<li><a href="#_adg_2_2包含2_2之前的版本">1.2.1. ADG-2.2（包含2.2）之前的版本</a></li>
+<li><a href="#_adg_2_3_之后的版本以qemu_x86为例">1.2.2. ADG-2.3 之后的版本，以qemu-x86为例</a></li>
+</ul>
+</li>
+<li><a href="#_准备环境">1.3. 准备环境</a></li>
+<li><a href="#_添加环境变量">1.4. 添加环境变量</a></li>
+<li><a href="#_安装eb_corbos_studio">1.5. 安装EB corbos Studio</a></li>
+<li><a href="#_运行eb_corbos_studio">1.6. 运行EB corbos Studio</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作">1.6.1. 命令行操作</a></li>
+<li><a href="#_点击图标操作">1.6.2. 点击图标操作</a></li>
+<li><a href="#_安装了多个corbosadg版本">1.6.3. 安装了多个corbos/adg版本</a></li>
+</ul>
+</li>
+<li><a href="#_选择workspace">1.7. 选择workspace</a></li>
+<li><a href="#_准备adg_demo">1.8. 准备adg demo</a></li>
+</ul>
+</li>
+<li><a href="#_如何使用cli">2. 如何使用CLI</a>
+<ul class="sectlevel2">
+<li><a href="#UsingCLI">2.1. ara-cli简介</a></li>
+<li><a href="#_开始使用">2.2. 开始使用</a>
+<ul class="sectlevel3">
+<li><a href="#_创建新工程">2.2.1. 创建新工程</a></li>
+<li><a href="#_移植已有工程">2.2.2. 移植已有工程</a>
+<ul class="sectlevel4">
+<li><a href="#_修改cmkelists_txt">修改CMkeLists.txt</a></li>
+<li><a href="#_使用eb_corbos_starterkit的示例demo">使用EB corbos Starterkit的示例demo</a></li>
+</ul>
+</li>
+<li><a href="#_配置工程">2.2.3. 配置工程</a></li>
+<li><a href="#_运行plugets">2.2.4. 运行plugets</a></li>
+<li><a href="#_工程构建">2.2.5. 工程构建</a></li>
+<li><a href="#_工程验证">2.2.6. 工程验证</a></li>
+</ul>
+</li>
+<li><a href="#_使用qemu">2.3. 使用QEMU</a></li>
+<li><a href="#_使用r_car_h3">2.4. 使用R-Car H3</a></li>
+<li><a href="#_working_with_a_target_host">2.5. Working with a target host</a></li>
+<li><a href="#_使用容器">2.6. 使用容器</a></li>
+<li><a href="#_使用ucm包">2.7. 使用UCM包</a></li>
+<li><a href="#_perform_system_and_user_space_tracing_with_lttng_and_perf">2.8. Perform system and user space tracing with LTTng and perf</a></li>
+<li><a href="#_working_with_an_application_binary">2.9. Working with an application binary</a></li>
+<li><a href="#_working_with_adg_modules">2.10. Working with ADG modules</a></li>
+<li><a href="#_构建eb_linux镜像">2.11. 构建EB Linux镜像</a></li>
+<li><a href="#_starterkit">2.12. Starterkit</a></li>
+<li><a href="#_troubleshooting">2.13. Troubleshooting</a></li>
+<li><a href="#_卸载starkerkit">2.14. 卸载Starkerkit</a></li>
+</ul>
+</li>
+<li><a href="#_如何使用gui">3. 如何使用GUI</a>
+<ul class="sectlevel2">
+<li><a href="#UsingGUI">3.1. EB corbos Studio简介</a>
+<ul class="sectlevel3">
+<li><a href="#_启动eb_corbos_studio">3.1.1. 启动EB corbos Studio</a></li>
+<li><a href="#_使用导入工程">3.1.2. 使用/导入工程</a></li>
+<li><a href="#_配置工程_2">3.1.3. 配置工程</a></li>
+<li><a href="#_运行plugets_2">3.1.4. 运行plugets</a></li>
+<li><a href="#_工程构建_2">3.1.5. 工程构建</a></li>
+<li><a href="#_工程验证_2">3.1.6. 工程验证</a></li>
+</ul>
+</li>
+<li><a href="#_使用qemu_2">3.2. 使用QEMU</a></li>
+<li><a href="#_使用r_car_h3_2">3.3. 使用R-Car H3</a></li>
+<li><a href="#_working_with_a_target_host_2">3.4. Working with a target host</a></li>
+<li><a href="#_使用容器_2">3.5. 使用容器</a></li>
+<li><a href="#_使用ucm包_2">3.6. 使用UCM包</a></li>
+<li><a href="#_perform_system_and_user_space_tracing_with_lttng_and_perf_2">3.7. Perform system and user space tracing with LTTng and perf</a></li>
+<li><a href="#_working_with_an_application_binary_2">3.8. Working with an application binary</a></li>
+<li><a href="#_working_with_adg_modules_2">3.9. Working with ADG modules</a></li>
+</ul>
+</li>
+<li><a href="#_使用starterkit自带的demo">4. 使用Starterkit自带的Demo</a>
+<ul class="sectlevel2">
+<li><a href="#DemoAraCom">4.1. 交通信号场景模拟应用</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作_2">4.1.1. 命令行操作</a></li>
+</ul>
+</li>
+<li><a href="#_导入工程">4.2. 导入工程</a>
+<ul class="sectlevel3">
+<li><a href="#_ui界面操作">4.2.1. UI界面操作</a></li>
+</ul>
+</li>
+<li><a href="#_运行与adg相关的pluget">4.3. 运行与ADG相关的pluget</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作_3">4.3.1. 命令行操作：</a></li>
+<li><a href="#_ui界面操作_2">4.3.2. UI界面操作：</a></li>
+</ul>
+</li>
+<li><a href="#_编译工程">4.4. 编译工程</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作_4">4.4.1. 命令行操作</a></li>
+<li><a href="#_ui界面操作_3">4.4.2. UI界面操作</a></li>
+</ul>
+</li>
+<li><a href="#_把编译好的工程封装进container">4.5. 把编译好的工程封装进Container</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作_5">4.5.1. 命令行操作</a></li>
+<li><a href="#_ui界面操作_4">4.5.2. UI界面操作</a></li>
+</ul>
+</li>
+<li><a href="#_起qemu">4.6. 起qemu</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作_6">4.6.1. 命令行操作</a></li>
+</ul>
+</li>
+<li><a href="#_登陆qemu">4.7. 登陆qemu</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作_7">4.7.1. 命令行操作</a></li>
+</ul>
+</li>
+<li><a href="#_部署container到qemu">4.8. 部署container到qemu</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作_8">4.8.1. 命令行操作</a></li>
+<li><a href="#_ui界面操作_5">4.8.2. UI界面操作</a></li>
+</ul>
+</li>
+<li><a href="#_部署配置文件到qemu">4.9. 部署配置文件到qemu</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作_9">4.9.1. 命令行操作</a></li>
+<li><a href="#_ui界面操作_6">4.9.2. UI界面操作</a></li>
+</ul>
+</li>
+<li><a href="#_执行程序">4.10. 执行程序</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作_10">4.10.1. 命令行操作</a></li>
+<li><a href="#_ui界面操作_7">4.10.2. UI界面操作</a></li>
+</ul>
+</li>
+<li><a href="#_停止qemu">4.11. 停止qemu</a>
+<ul class="sectlevel3">
+<li><a href="#_命令行操作_11">4.11.1. 命令行操作</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_新建项目">5. 新建项目</a>
+<ul class="sectlevel2">
+<li><a href="#_创建一个新的工程">5.1. 创建一个新的工程</a></li>
+<li><a href="#_导入新建的项目">5.2. 导入新建的项目</a></li>
+<li><a href="#_修改cmakelist">5.3. 修改CMakeList</a></li>
+<li><a href="#_修改project_config_json">5.4. 修改project_config.json</a>
+<ul class="sectlevel3">
+<li><a href="#_修改deploy_files那一栏的内容">5.4.1. 修改deploy-files那一栏的内容</a></li>
+<li><a href="#_修改target_host为我们想要depoly的qemu地址">5.4.2. 修改target-host为我们想要depoly的qemu地址</a></li>
+</ul>
+</li>
+<li><a href="#_model文件夹内容">5.5. Model文件夹内容</a></li>
+<li><a href="#_在impl下面实现自己的代码">5.6. 在impl下面实现自己的代码</a></li>
+<li><a href="#_根据model生成配置文件">5.7. 根据model生成配置文件</a></li>
+<li><a href="#_起qemu1qemu2">5.8. 起qemu1&amp;qemu2</a></li>
+<li><a href="#_编译生成container部署到qemu里">5.9. 编译生成container，部署到qemu里</a></li>
+</ul>
+</li>
+<li><a href="#_trobuleshooting">6. Trobuleshooting:</a>
+<ul class="sectlevel2">
+<li><a href="#Troubleshooting">6.1. Some IP通讯失败</a></li>
+<li><a href="#_qemu_与外部网络通信">6.2. qemu 与外部网络通信</a></li>
+<li><a href="#_ipv4_支持">6.3. ipv4 支持</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_安装步骤">1. 安装步骤</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="Installation">1.1. 准备系统</h3>
+<div class="paragraph">
+<p>安装Ubuntu 18.04（如需在windows系统上使用EB corbos Starterkit,需要先安装虚拟机），将EB corbos Starterkit安装包（示例版本为adg-eblinux-standard-delivery.tar.gz) 放置到 <code>~/Downloads</code> 。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_解压安装包">1.2. 解压安装包</h3>
+<div class="sect3">
+<h4 id="_adg_2_2包含2_2之前的版本">1.2.1. ADG-2.2（包含2.2）之前的版本</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight nowrap"><code data-lang="bash"><span></span>mkdir -p /tmp/delivery
+<span class="tok-nb">cd</span> /tmp/delivery
+tar xf ~/Downloads/adg-eblinux-standard-delivery.tar.gz</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_adg_2_3_之后的版本以qemu_x86为例">1.2.2. ADG-2.3 之后的版本，以qemu-x86为例</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight nowrap"><code data-lang="bash"><span></span>mkdir -p /tmp/delivery
+<span class="tok-nb">cd</span> /tmp/delivery
+tar xf ~/Downloads/ask-ADG-2.3-eblinux-bin.tar.gz
+tar xf ~/Downloads/ask-ADG-2.3-eblinux-qemu-x86.tar.gz</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_准备环境">1.3. 准备环境</h3>
+<div class="paragraph">
+<p>执行installer脚本</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./adg-standard-installer-ADG-2.2.sh</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>或者</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>adg-ADG-2.3-installer.sh</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>路径选择时建议使用默认路径 ~/ara/eb，直接按下Enter即可。
+执行完毕界面如下图所示。
+<span class="image"><img src="../img/eb_corbos_starterkit/run_installer_sh.png" alt="test"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_添加环境变量">1.4. 添加环境变量</h3>
+<div class="literalblock">
+<div class="content">
+<pre>gedit ~/.bashrc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在 ~/.bashrc 最后一行添加如下环境变量：<br>
+export workspace=~/ara/eb/workspace/</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_安装eb_corbos_studio">1.5. 安装EB corbos Studio</h3>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli SdkMgr --overwrite --activate --update-packages adg.*.tar.gz</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>在最后可根据自己的当前环境选择相应的 <code>platform:</code> 比如 <code>qemu-x86</code>
+<span class="image"><img src="../img/eb_corbos_starterkit/Picture1.png" alt="test"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_运行eb_corbos_studio">1.6. 运行EB corbos Studio</h3>
+<div class="sect3">
+<h4 id="_命令行操作">1.6.1. 命令行操作</h4>
+<div class="literalblock">
+<div class="content">
+<pre>corbos-studio-launcher --target-os eblinux</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_点击图标操作">1.6.2. 点击图标操作</h4>
+<div class="paragraph">
+<p>图标路径： <code>~/ara/eb/tools/studio/ADG-2.2/EB_corbos_Studio</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_安装了多个corbosadg版本">1.6.3. 安装了多个corbos/adg版本</h4>
+<div class="paragraph">
+<p>默认会打开最新安装的EB corbos Stuido版本，如果有特殊需求，可以修改~/.ara/config.ini文件的配置</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_选择workspace">1.7. 选择workspace</h3>
+<div class="paragraph">
+<p>自行选择workspace路径，下图是示例路径：<code>~/ara/eb/workspace</code>
+<span class="image"><img src="../img/eb_corbos_starterkit/Picture2.png" alt="test"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_准备adg_demo">1.8. 准备adg demo</h3>
+<div class="paragraph">
+<p>adg demo路径为： <code>~/ara/eb/adaptivecore/source/git/ara_Demos/impl/demonstrator/templates/demos/</code><br>
+把5个demos拷贝进workspace。下图是示例路径 <code>~/ara/eb/workspace/adg/demo</code>
+<span class="image"><img src="../img/eb_corbos_starterkit/Picture3.png" alt="test"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_如何使用cli">2. 如何使用CLI</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="UsingCLI">2.1. ara-cli简介</h3>
+<div class="paragraph">
+<p>ara-cli is a Python-based command line tool used to run different build and verification operations. ara-cli
+offers a set of hooks, which combine multi-step operations into a single hook. A hook usually calls a set of tasks
+in order and with predefined parameters. Additionally, it is also possible to call individual tasks with ara-cli.
+The set of available hooks and tasks can be listed with the following command:
+ara-cli
+You can get help with a task or hook if you add the --help parameter after a hook or a task name.
+ara-cli Build --help</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_开始使用">2.2. 开始使用</h3>
+<div class="paragraph">
+<p>AP应用相关的操作由 <code>ara-cli Application</code> 命令完成，相关参数可由 <code>ara-cli Application --help</code> 查看。</p>
+</div>
+<div class="sect3">
+<h4 id="_创建新工程">2.2.1. 创建新工程</h4>
+<div class="paragraph">
+<p>你可以通过 <code>ara-cli Application</code> 命令创建新工程</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli Application --create-project --app ~/workspace/adg/demo --target-os &lt;target_os&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>然后，生成CMakeList：</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli Application --generate-cmake --app ~/workspace/adg/demo --target-os &lt;target_os&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_移植已有工程">2.2.2. 移植已有工程</h4>
+<div class="sect4">
+<h5 id="_修改cmkelists_txt">修改CMkeLists.txt</h5>
+<div class="paragraph">
+<p>添加project定义：</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>project(demo
+ VERSION 1.0.0
+ LANGUAGES CXX
+)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>添加include文件</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>include(Options.cmake)
+include(InstallPaths.cmake)
+include(Test.cmake)
+include(CommonTargets)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>根据项目需求，添加对应的包信息：</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>find_package(ara_TSyn REQUIRED)
+find_package(ara_HealthMgr REQUIRED)
+find_package(ara_DLT REQUIRED)
+find_package(ara_PM REQUIRED)
+find_package(ara_EM REQUIRED)
+find_package(ara_PSP REQUIRED)
+find_package(ara_Com REQUIRED)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>然后，生成CMakeList：</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli Application --generate-cmake --app ~/existing_project --target-os &lt;target_os&gt;.</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_使用eb_corbos_starterkit的示例demo">使用EB corbos Starterkit的示例demo</h5>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_配置工程">2.2.3. 配置工程</h4>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_运行plugets">2.2.4. 运行plugets</h4>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_工程构建">2.2.5. 工程构建</h4>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_工程验证">2.2.6. 工程验证</h4>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用qemu">2.3. 使用QEMU</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用r_car_h3">2.4. 使用R-Car H3</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_working_with_a_target_host">2.5. Working with a target host</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用容器">2.6. 使用容器</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用ucm包">2.7. 使用UCM包</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_perform_system_and_user_space_tracing_with_lttng_and_perf">2.8. Perform system and user space tracing with LTTng and perf</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_working_with_an_application_binary">2.9. Working with an application binary</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_working_with_adg_modules">2.10. Working with ADG modules</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_构建eb_linux镜像">2.11. 构建EB Linux镜像</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_starterkit">2.12. Starterkit</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_troubleshooting">2.13. Troubleshooting</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_卸载starkerkit">2.14. 卸载Starkerkit</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_如何使用gui">3. 如何使用GUI</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="UsingGUI">3.1. EB corbos Studio简介</h3>
+<div class="paragraph">
+<p>EB corbos Studio由基于python实现的启动脚本开始运行，执行脚本时也可以输入参数，相关参数以及帮助信息请执行：</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>corbos-studio-launcher --help</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_启动eb_corbos_studio">3.1.1. 启动EB corbos Studio</h4>
+<div class="paragraph">
+<p>输入以下命令启动：</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>corbos-studio-launcher --target-os &lt;target_os&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>选择对应的workspace：
+<span class="image"><img src="../img/eb_corbos_starterkit/UsingGUI_SelectWsp.png" alt="UsingGUI_SelectWsp" title="Select workspace"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_使用导入工程">3.1.2. 使用/导入工程</h4>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_配置工程_2">3.1.3. 配置工程</h4>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_运行plugets_2">3.1.4. 运行plugets</h4>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_工程构建_2">3.1.5. 工程构建</h4>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_工程验证_2">3.1.6. 工程验证</h4>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用qemu_2">3.2. 使用QEMU</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用r_car_h3_2">3.3. 使用R-Car H3</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_working_with_a_target_host_2">3.4. Working with a target host</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用容器_2">3.5. 使用容器</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用ucm包_2">3.6. 使用UCM包</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_perform_system_and_user_space_tracing_with_lttng_and_perf_2">3.7. Perform system and user space tracing with LTTng and perf</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_working_with_an_application_binary_2">3.8. Working with an application binary</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_working_with_adg_modules_2">3.9. Working with ADG modules</h3>
+<div class="paragraph">
+<p>TBD</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_使用starterkit自带的demo">4. 使用Starterkit自带的Demo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>如不做特殊说明，以下demo都是基于ADG-2.4并以CLI方式进行演示</p>
+</div>
+<div class="sect2">
+<h3 id="DemoAraCom">4.1. 交通信号场景模拟应用</h3>
+<div class="paragraph">
+<p>本应用包含以下Demo：<br></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. 交通信号场景模拟应用demo列表</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Demo名称</th>
+<th class="tableblock halign-left valign-top">功能</th>
+<th class="tableblock halign-left valign-top">相关模块</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensor_handler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TBD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ara:Com, ara:EM, ara:PM, ara:Phm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensor_Preprocessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TBD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ara:Com, ara:EM, ara:Phm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensor_Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TBD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ara:Com, ara:EM, ara:Phm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensor_dataProcessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TBD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ara:Com, ara:EM, ara:PM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display_Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TBD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ara:Com, ara:EM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">phm_callback</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TBD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ara:EM</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="../img/eb_corbos_starterkit/DemoAraCom_TrafficSign.png" alt="DemoAraCom_TrafficSign" title="Traffic Sign Scenario"></span></p>
+</div>
+<div class="sect3">
+<h4 id="_命令行操作_2">4.1.1. 命令行操作</h4>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli Application --generate-cmake --app ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/ --target-os eblinux --target-platform qemu-x86</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_导入工程">4.2. 导入工程</h3>
+<div class="paragraph">
+<p>如全程使用命令行操作，此步骤不需要。</p>
+</div>
+<div class="sect3">
+<h4 id="_ui界面操作">4.2.1. UI界面操作</h4>
+<div class="paragraph">
+<p>File&#8594;import<br>
+Select an import wizard: General/Existing Projects into Workspace
+<span class="image"><img src="../img/eb_corbos_starterkit/import_project.png" alt="test"></span>
+Select root directory: <code>~/ara/eb/workspace/adg/demo/Sensor_Preprocessor</code><br>
+Copy project into workspace选项在项目不在workspace目录的时候需要选中。
+<span class="image"><img src="../img/eb_corbos_starterkit/select_root_directory.png" alt="test"></span></p>
+</div>
+<div class="paragraph">
+<p>目录结构介绍：
+Build Targets里面是一些编译操作<br>
+Includes是依赖的第三方头文件和我们ADG的头文件<br>
+Impl是我们需要实现功能的代码路径<br>
+Launch是ContainerDeploy到qemu之后，提供run和debug操作<br>
+Model放的是该工程依赖ADG的arxml配置文件<br>
+Plugets里的插件可以让我们根据model里的arxml生成配置文件或者代码，具体可以看user guide<br>
+Test里放的是单元测试代码<br>
+…<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/folder_structure.png" alt="test"></span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_运行与adg相关的pluget">4.3. 运行与ADG相关的pluget</h3>
+<div class="paragraph">
+<p>Sensor_dataProcessor， Sensor_handler需要araPmManifestGen.pluget插件<br>
+跨VM的Sensor_handler ,Sensor_Preprocessor需要araComManifestGenerator插件<br>
+必要插件：araEmManifestGen.pluget, araComBindingGenerator.pluget</p>
+</div>
+<div class="sect3">
+<h4 id="_命令行操作_3">4.3.1. 命令行操作：</h4>
+<div class="paragraph">
+<p>--EM相关—</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli RunPluget --name araEmManifestGen.pluget \
+--input  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/ \
+--output ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>--Com相关—</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli RunPluget --name AraComBindingGenerator.pluget \
+--input  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/ \
+--output  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>--Com配置文件—</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli RunPluget --name AraComManifestGenerator.pluget \
+--input  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/ \
+--output  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>--PM相关—</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli RunPluget --name araPmManifestGen.pluget \
+--input  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/ \
+--output  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ui界面操作_2">4.3.2. UI界面操作：</h4>
+<div class="paragraph">
+<p>执行AraComBindingGenerator.pluget,点击OK。<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/execute_pluget_AraComBindingGenerator.png" alt="test"></span>
+此步骤会在generated文件夹下生成代码，给Service或Client使用。
+<span class="image"><img src="../img/eb_corbos_starterkit/generate_code.png" alt="test"></span></p>
+</div>
+<div class="paragraph">
+<p>执行AraComManifestGenerator.pluget,点击OK。<br>
+此步骤会在generated下生成config文件夹，里面有sensor_preprocessor_someip_machine1.json文件。
+<span class="image"><img src="../img/eb_corbos_starterkit/execute_pluget_AraComManifestGenerator.png" alt="test"></span></p>
+</div>
+<div class="paragraph">
+<p>执行araEmManifestGen,点击OK。<br>
+此步骤会在generated文件夹生成EM相关的配置文件。
+<span class="image"><img src="../img/eb_corbos_starterkit/execute_pluget_araEmManifestGen.png" alt="test"></span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_编译工程">4.4. 编译工程</h3>
+<div class="sect3">
+<h4 id="_命令行操作_4">4.4.1. 命令行操作</h4>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli Application --app  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/ --target-os eblinux --target-platform qemu-x86</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ui界面操作_3">4.4.2. UI界面操作</h4>
+<div class="paragraph">
+<p>点击Build Targets/ Build</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_把编译好的工程封装进container">4.5. 把编译好的工程封装进Container</h3>
+<div class="sect3">
+<h4 id="_命令行操作_5">4.5.1. 命令行操作</h4>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli CreateAppContainer --app-dir  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/ \
+--config-dir  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/generated \
+--container-dir  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/container</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ui界面操作_4">4.5.2. UI界面操作</h4>
+<div class="paragraph">
+<p>点击Build Targets/CreateAppContainer</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_起qemu">4.6. 起qemu</h3>
+<div class="paragraph">
+<p>qemu1: Sensor_Preprocessor,Sensor_Manager,Sensor_dataProcessor,Display_Manager<br>
+qemu2: Sensor_handler<br>
+下文命令行中数字1皆代表qemu1.</p>
+</div>
+<div class="sect3">
+<h4 id="_命令行操作_6">4.6.1. 命令行操作</h4>
+<div class="literalblock">
+<div class="content">
+<pre>ara-network -a -N 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../img/eb_corbos_starterkit/network_bridge.png" alt="test"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli RunQemu --start 1 --target-os eblinux</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>（第一次执行可能会失败，再次执行即可）
+<span class="image"><img src="../img/eb_corbos_starterkit/run_qemu.png" alt="test"></span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_登陆qemu">4.7. 登陆qemu</h3>
+<div class="sect3">
+<h4 id="_命令行操作_7">4.7.1. 命令行操作</h4>
+<div class="literalblock">
+<div class="content">
+<pre>ssh -o StrictHostKeyChecking=no root@fd00::eb:1</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_部署container到qemu">4.8. 部署container到qemu</h3>
+<div class="sect3">
+<h4 id="_命令行操作_8">4.8.1. 命令行操作</h4>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli DeployAppContainer --app-dir  ~/ara/eb/workspace/adg/demo/Sensor_Preprocessor/ --target-host root@fd00::eb:1</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ui界面操作_5">4.8.2. UI界面操作</h4>
+<div class="paragraph">
+<p>点击Build Targets/DeployAppContainer</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_部署配置文件到qemu">4.9. 部署配置文件到qemu</h3>
+<div class="paragraph">
+<p>Sensor_handler和Sensor_Preprocessor需要Deploy Target File,之后可以在qemu1和qemu2  之间通信。<br>
+此步骤会把json文件deploy到qemu里，路径为 <code>/etc/adaptive/ara_Com/daemon_1/sensor_preprocessor_someip_machine1.json</code></p>
+</div>
+<div class="sect3">
+<h4 id="_命令行操作_9">4.9.1. 命令行操作</h4>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli TargetOperation --app-dir ./Sensor_Preprocessor</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ui界面操作_6">4.9.2. UI界面操作</h4>
+<div class="paragraph">
+<p>点击Build Targets/DeployTargetFiles</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_执行程序">4.10. 执行程序</h3>
+<div class="literalblock">
+<div class="content">
+<pre>runc list</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Qemu1:<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/runc_list_qemu1.png" alt="test"></span></p>
+</div>
+<div class="paragraph">
+<p>Qemu2:<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/runc_list_qemu2.png" alt="test"></span></p>
+</div>
+<div class="sect3">
+<h4 id="_命令行操作_10">4.10.1. 命令行操作</h4>
+<div class="paragraph">
+<p>Qemu1:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>runc exec Sensor_Preprocessor /opt/Sensor_Preprocessor/bin/Sensor_Preprocessor</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>runc exec Sensor_Manager /opt/Sensor_Manager/bin/Sensor_Manager</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>runc exec Sensor_dataProcessor /opt/Sensor_dataProcessor/bin/Sensor_dataProcessor</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>runc exec Display_Manager /opt/Display_Manager/bin/Display_Manager</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Qemu2:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>runc exec Sensor_handler /opt/Sensor_handler/bin/Sensor_handler</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>左1：Displayer_Manager<br>
+左2：Sensor_Manager<br>
+左3：Sensor_dataProcessor<br>
+右1：Sensor_Preprocessor，在Sensor_handler没起之前,FindService结果为0，否则为1<br>
+右2：Sensor_handler<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/communication_processes.png" alt="test"></span>
+<span class="image"><img src="../img/eb_corbos_starterkit/demo_logo.png" alt="test"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ui界面操作_7">4.10.2. UI界面操作</h4>
+<div class="paragraph">
+<p>右击/launch/Sensor_Preprocessor_run.launch &#8594; Run As &#8594; Sensor_Preprocessor_run<br>
+弹窗点击yes，会在Console看到程序的log。
+<span class="image"><img src="../img/eb_corbos_starterkit/Sensor_Preprocessor_run.png" alt="test"></span>
+<span class="image"><img src="../img/eb_corbos_starterkit/Sensor_Preprocessor_log.png" alt="test"></span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_停止qemu">4.11. 停止qemu</h3>
+<div class="sect3">
+<h4 id="_命令行操作_11">4.11.1. 命令行操作</h4>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli RunQemu --stop 1</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_新建项目">5. 新建项目</h2>
+<div class="sectionbody">
+<div id="CreateProject" class="paragraph">
+<p>添加一个加法服务，服务端提供一个两个int入参，一个int返回值的接口add2nums。
+最终实现两数相加，在VM1和VM2进行someip交互。</p>
+</div>
+<div class="sect2">
+<h3 id="_创建一个新的工程">5.1. 创建一个新的工程</h3>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli Application --create-project --app ~/ara/eb/workspace/adg/demo/AddService --target-os eblinux
+ara-cli Application --create-project --app ~/ara/eb/workspace/adg/demo/AddClient --target-os eblinux</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_导入新建的项目">5.2. 导入新建的项目</h3>
+<div class="paragraph">
+<p><span class="image"><img src="../img/eb_corbos_starterkit/import_new_project.png" alt="test"></span><br>
+注意：如果新导入项目没有Build Targets，需要关闭项目重新打开.<br>
+右击AddService→Close Project<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/close_project.png" alt="test"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_修改cmakelist">5.3. 修改CMakeList</h3>
+<div class="paragraph">
+<p>定义变量：
+# This must be explicitly set when the project installs files for just 1 component (not devel)
+set(CPACK_COMPONENTS_ALL runtime)<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/modify_CMakelist.png" alt="test"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_修改project_config_json">5.4. 修改project_config.json</h3>
+<div class="sect3">
+<h4 id="_修改deploy_files那一栏的内容">5.4.1. 修改deploy-files那一栏的内容</h4>
+<div class="paragraph">
+<p>"deploy-files": [
+            {
+                "items": [
+                    {
+                        "deploy-files-list": ["generated/config/&lt;projectname&gt;(小写)_someip_machine1.json"],
+                        "deploy-files-dest": "/data/target/etc/adaptive/ara_Com/daemon_1"
+                    }
+                ],
+                "skip": "False"
+            }
+]
+json文件最终会deploy到qemu里的"/data/target/etc/adaptive/ara_Com/daemon_1"目录</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_修改target_host为我们想要depoly的qemu地址">5.4.2. 修改target-host为我们想要depoly的qemu地址</h4>
+<div class="paragraph">
+<p>"target-host": [
+            {
+                "ip": "fd00::eb:2"
+            }
+    ],
+"target-host" 里添加想deploy的目标ip, 现在qemu1是 fd00::eb:1 qemu2是fd00::eb:2</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_model文件夹内容">5.5. Model文件夹内容</h3>
+<div class="paragraph">
+<p>拷贝Sensor_handel model文件夹下的：system.arxml和machine.arxml（原来的arxml需要先备份一下，之后会用到）到我们的项目里。这两个arxml是跟随环境定制的。<br>
+修改ExecutionManager.ecuconfig: (调用dlt的接口时需要用到share memory)<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/ExecutionManager_ecuconfig.jpg" alt="test"></span><br>
+因为service.arxml里面用到了一些基本类型，从Senson_handler model里拷贝impltypes.arxml到我们项目中。<br>
+写我们的定义的服务接口add2nums：service.arxml，和deployment_udp.arxml。可以参照之前demo写。<br>
+注意：
+一个服务里可以同时有method, event, field接口。<br>
+如果觉得需要划分功能，可以用多个功能相应的service.arxml和deployment_udp.arxml。<br>
+下图为接口入参配置。<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/interface_parameter_configuration.png" alt="test"></span><br>
+AddService_Interface为我们定义的一个Interface。</p>
+</div>
+<div class="paragraph">
+<p>下图为返回值配置：<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/return_value_configuration.png" alt="test"></span><br>
+Interfaceid 和instanceid和methodid在Deployment_udp.arxml中定义。<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/Deployment_udp.png" alt="test"></span><br>
+ServiceInterface指向的是service.arxml中定义的Interface。<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/ServiceInterface.png" alt="test"></span><br>
+SdServerConfig指向的Config中定义了我们服务的一些属性。<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/SdServerConfig.png" alt="test"></span><br>
+add2nums要指向到我们定义的函数接口。</p>
+</div>
+<div class="paragraph">
+<p>如果不知道某项配置的指向可以点击倒三角然后跳转到定义处。<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/other_configuration.png" alt="test"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_在impl下面实现自己的代码">5.6. 在impl下面实现自己的代码</h3>
+<div class="paragraph">
+<p>参考我们demo的实现代码。
+Service端主要接口：OfferService，StopOfferService
+Client端主要接口：FindService</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_根据model生成配置文件">5.7. 根据model生成配置文件</h3>
+<div class="paragraph">
+<p>点击pluget里的插件AraComBindingGenerator.pluget 生成SOA需要的源文件和头文件在项目generated文件夹里。<br>
+点击pluget里的插件 AraComManifestGenerator.pluget 根据deployment_udp.arxml生成 配置文件**_someip_machine1.json在generated，用于VM之间通信。<br>
+点击pluget 里的插件araEmManifestGen.pluget 生成em所需要的一些配置文件，在做这一步时，machine.arxml需要替换为之前备份的machine.arxml，才能执行成功，这个问题我们还需要研究一下。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_起qemu1qemu2">5.8. 起qemu1&amp;qemu2</h3>
+<div class="paragraph">
+<p>数字1代表qemu1.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-network -a -N 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../img/eb_corbos_starterkit/network_bridge.png" alt="test"></span></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli RunQemu --start 1 --target-os eblinux</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../img/eb_corbos_starterkit/run_qemu.png" alt="test"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_编译生成container部署到qemu里">5.9. 编译生成container，部署到qemu里</h3>
+<div class="paragraph">
+<p>逐步点击Build Targets里的 Build ，CreateAppContainer，DeployAppContainer，DeployTargetFiles。</p>
+</div>
+<div class="paragraph">
+<p>===执行程序</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>runc list</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>查看已经运行container<br>
+QEMU1:<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/new_runc_list_qemu1.png" alt="test"></span><br>
+QEMU2:<br>
+<span class="image"><img src="../img/eb_corbos_starterkit/new_runc_list_qemu2.png" alt="test"></span><br></p>
+</div>
+<div class="paragraph">
+<p>重启com_daemon使其添加我们的someip配置文件(两个qemu都要做)。<br>
+Qemu里执行：systemctl restart com-daemon-container<br>
+Qemu里执行：ps ww | grep com_daemon<br>
+可以看到qemu里com_daemon的启动参数里添加上了我们的配置文件。<br>
+/usr/bin/com_daemon -d -i fd00::eb:f5 fe80::8cd9:b4ff:fe7c:4548 -n eth0 -m /etc/adaptive/ara_Com/daemon_1/addclient_someip_machine1.json -c 255 -e /var/run/adaptive/ara_Com/ara_com_sm -g /var/run/adaptive/ara_Com/ara_com_gw_1_ --add_config /required_service_instances/*/maximum_number_of_instances=3</p>
+</div>
+<div class="paragraph">
+<p>运行：<br>
+Qemu1运行：runc exec -t AddService /opt/AddService/bin/AddService<br>
+Qemu2运行：runc exec -t AddClient /opt/AddClient/bin/AddClient<br></p>
+</div>
+<div class="paragraph">
+<p>下图可以看出qemu1的service和qemu2的client建立了连接，并且调用函数成功。
+<span class="image"><img src="../img/eb_corbos_starterkit/new_log.png" alt="test"></span><br></p>
+</div>
+<div class="paragraph">
+<p>===停止qemu</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ara-cli RunQemu --stop 1</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_trobuleshooting">6. Trobuleshooting:</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="Troubleshooting">6.1. Some IP通讯失败</h3>
+<div class="paragraph">
+<p>在qemu中执行</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ps ww | grep com_daemon</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>查看com_daemon是否把配置文件加上。
+<span class="image"><img src="../img/eb_corbos_starterkit/check_config.png" alt="test"></span><br>
+/usr/bin/com_daemon 应该是-m 选项， 来指定load的manifest file<br>
+如果不是，则需要执行</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>systemctl restart com-daemon-container</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>来重启com-daemon
+<span class="image"><img src="../img/eb_corbos_starterkit/restart_com_daemon.png" alt="test"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_qemu_与外部网络通信">6.2. qemu 与外部网络通信</h3>
+<div class="paragraph">
+<p>需要将qemu 的网卡作为master 来桥接， 执行</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo ip link set ens33 master ara_br</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>其中ens33 是host 的网卡</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ipv4_支持">6.3. ipv4 支持</h3>
+<div class="paragraph">
+<p>EB corbos studio 默认支持ipv6 , 如果想使用ipv4 , 需要手动启动com-daemon，配置相应的ipv4 地址。以qemu1 为例：</p>
+</div>
+<div class="paragraph">
+<p>登陆到qemu</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ssh -o StrictHostKeyChecking=no root@fd00::eb:1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>查看com_daemon 默认指令</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ps ww | grep com_daemon</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../img/eb_corbos_starterkit/com_daemon.png" alt="test"></span><br>
+可以看到默认的ipv6 地址， 需要将其改成ipv4 地址 ：</p>
+</div>
+<div class="paragraph">
+<p>进入adaptive-core container</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>runc exec -t adaptivecore-container sh</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>查看ip 地址：</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ifconfig</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../img/eb_corbos_starterkit/ifconfig.png" alt="test"></span><br>
+可以看到ipv4 地址： 192.168.7.126</p>
+</div>
+<div class="paragraph">
+<p>启动com_daemon：</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> /usr/bin/com_daemon -d -i 192.168.7.126 -n eth0 \
+-m /etc/adaptive/ara_Com/daemon_1/sensor_manager_someip_machine1.json -c 255 \
+-e /var/run/adaptive/ara_Com/ara_com_sm -g /var/run/adaptive/ara_Com/ara_com_gw_1_</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>注意：
+1. 命令是进到 adaptivecore- container 里执行操作，-i 后的地址是adaptive-container 的ip地址<br>
+2. -m 后面加的是someip manifest文件路径，注意是adaptivecore- container内的文件路径，
+默认我们会做mount 操作， 上述路径就是deploy 默认路径， 只需要改文件名即可</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
