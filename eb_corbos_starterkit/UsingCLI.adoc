@@ -53,7 +53,7 @@ find_package(ara_Com REQUIRED)
 ara-cli Application --generate-cmake --app ~/existing_project --target-os <target_os>.
 ....
 
-===== 使用EB corbos的示例demo
+===== 使用EB corbos Starterkit的示例demo
 TBD
 
 ==== 配置工程

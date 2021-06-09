@@ -1,4 +1,4 @@
-= EB Corbos StarterKit 安装说明
+= EB corbos StarterKit 安装说明
 :sectnums:
 :toc: left
 :toc-title: 目录
