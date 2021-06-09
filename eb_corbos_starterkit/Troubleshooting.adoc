@@ -5,14 +5,14 @@
 ps ww | grep com_daemon
 ....
 查看com_daemon是否把配置文件加上。
-image:{imgdir}/Picture19.png[test] +
+image:{imgdir}/check_config.png[test] +
 /usr/bin/com_daemon 应该是-m 选项， 来指定load的manifest file +
 如果不是，则需要执行
 ....
 systemctl restart com-daemon-container
 ....
 来重启com-daemon
-image:{imgdir}/Picture20.png[test]
+image:{imgdir}/restart_com_daemon.png[test]
 
 === qemu 与外部网络通信 
 需要将qemu 的网卡作为master 来桥接， 执行
