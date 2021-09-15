@@ -1,0 +1,27 @@
+= EB corbos StarterKit 安装说明
+:sectnums:
+:toc: left
+:toc-title: 目录
+:toclevels: 4
+:imgdir: ../img/eb_corbos_starterkit
+:source-highlighter: pygments
+
+== 安装步骤
+include::Installation.adoc[]
+
+== 如何使用CLI
+include::UsingCLI.adoc[]
+
+== 如何使用GUI
+include::UsingGUI.adoc[]
+
+== 使用Starterkit自带的Demo
+如不做特殊说明，以下demo都是基于ADG-2.4并以CLI方式进行演示
+include::DemoAraCom.adoc[]
+
+== 新建项目
+include::CreateProject.adoc[]
+
+== Trobuleshooting:
+include::Troubleshooting.adoc[]
+
