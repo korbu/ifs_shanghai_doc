@@ -3,9 +3,12 @@ home: true
 title: Home
 heroImage: /image/EB_logo.jpg
 actions:
-  - text: Documents list
+  - text: 文档列表
     link: /guide/getting-started.html
     type: primary
+  - text: 寻求支持
+    link: /guide/
+    type: secondary
 features:
   - title: Simplicity First
     details: Minimal setup with markdown-centered project structure helps you focus on writing.
@@ -19,7 +22,7 @@ features:
     details: Flexible plugin API, allowing plugins to provide lots of plug-and-play features for your site. 
   - title: Bundlers
     details: Both Webpack and Vite are supported. Choose the one you like!
-footer: MIT Licensed | Copyright © 2021-present EB Shanghai Team
+footer: MIT Licensed | Copyright © 2021-present EB上海团队
 ---
 
 ### As Easy as 1, 2, 3
