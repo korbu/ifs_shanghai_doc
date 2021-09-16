@@ -3,7 +3,7 @@ import type { DefaultThemeOptions } from '@vuepress/theme-default'
 import { navbar } from './configs'
 
 export default defineUserConfig<DefaultThemeOptions>({
-  base: '/',
+  base: '/ifs_shanghai_doc/',
   locales: {
     '/': {
       lang: 'en-US',
