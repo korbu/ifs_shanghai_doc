@@ -1,61 +1,67 @@
-[[CreateProject]]
-添加一个加法服务，服务端提供一个两个int入参，一个int返回值的接口add2nums。
-最终实现两数相加，在VM1和VM2进行someip交互。
+# 从头创建一个新工程
+以添加一个加法服务为例，服务端提供两个int入参，并返回int值的接口`add2nums`。
+最终实现两数相加，在VM1和VM2进行someip通信。
 
-=== 创建一个新的工程
-....
+## 创建一个新的工程
+``` bash
 ara-cli Application --create-project --app ~/ara/eb/workspace/adg/demo/AddService --target-os eblinux
 ara-cli Application --create-project --app ~/ara/eb/workspace/adg/demo/AddClient --target-os eblinux
-....
+```
 
-=== 导入新建的项目
+## 导入新建的项目
 image:{imgdir}/import_new_project.png[test] +
 注意：如果新导入项目没有Build Targets，需要关闭项目重新打开. +
 右击AddService→Close Project +
 image:{imgdir}/close_project.png[test]
 
 
-=== 修改CMakeList
+## 修改CMakeList
 定义变量：
 # This must be explicitly set when the project installs files for just 1 component (not devel)
 set(CPACK_COMPONENTS_ALL runtime) +
 image:{imgdir}/modify_CMakelist.png[test]
 
-=== 修改project_config.json
-==== 修改deploy-files那一栏的内容
+## 修改project_config.json
+### 修改deploy-files那一栏的内容
+``` json
 "deploy-files": [
+    {
+        "items": [
             {
-                "items": [
-                    {
-                        "deploy-files-list": ["generated/config/<projectname>(小写)_someip_machine1.json"],
-                        "deploy-files-dest": "/data/target/etc/adaptive/ara_Com/daemon_1"
-                    }
-                ],
-                "skip": "False"
+                "deploy-files-list": ["generated/config/<projectname>(小写)_someip_machine1.json"],
+                "deploy-files-dest": "/data/target/etc/adaptive/ara_Com/daemon_1"
             }
+        ],
+        "skip": "False"
+    }
 ]
-json文件最终会deploy到qemu里的"/data/target/etc/adaptive/ara_Com/daemon_1"目录
+```
+json文件最终会deploy到qemu里的`/data/target/etc/adaptive/ara_Com/daemon_1`目录
 
-==== 修改target-host为我们想要depoly的qemu地址
+### 修改target-host为我们想要depoly的qemu地址
+``` json
 "target-host": [
-            {
-                "ip": "fd00::eb:2"
-            }
-    ],
-"target-host" 里添加想deploy的目标ip, 现在qemu1是 fd00::eb:1 qemu2是fd00::eb:2
+    {
+        "ip": "fd00::eb:2"
+    }
+],
+```
+"target-host" 里添加想deploy的目标ip, 现在qemu1是`fd00::eb:1`, qemu2是`fd00::eb:2`。
 
-=== Model文件夹内容
-拷贝Sensor_handel model文件夹下的：system.arxml和machine.arxml（原来的arxml需要先备份一下，之后会用到）到我们的项目里。这两个arxml是跟随环境定制的。 +
-修改ExecutionManager.ecuconfig: (调用dlt的接口时需要用到share memory) +
-image:{imgdir}/ExecutionManager_ecuconfig.jpg[test] +
-因为service.arxml里面用到了一些基本类型，从Senson_handler model里拷贝impltypes.arxml到我们项目中。 +
-写我们的定义的服务接口add2nums：service.arxml，和deployment_udp.arxml。可以参照之前demo写。 +
-注意：
-一个服务里可以同时有method, event, field接口。 +
-如果觉得需要划分功能，可以用多个功能相应的service.arxml和deployment_udp.arxml。 +
-下图为接口入参配置。 +
-image:{imgdir}/interface_parameter_configuration.png[test] +
+## Model文件夹内容
++ 拷贝Sensor_handel model文件夹下的：system.arxml和machine.arxml（原来的arxml需要先备份一下，之后会用到）到我们的项目里。这两个arxml是跟随环境定制的
++ 修改ExecutionManager.ecuconfig: (调用dlt的接口时需要用到share memory)
+    image:{imgdir}/ExecutionManager_ecuconfig.jpg[test] +
++ 因为service.arxml里面用到了一些基本类型，从Senson_handler model里拷贝impltypes.arxml到我们项目中。 +
++ 写我们的定义的服务接口add2nums：service.arxml，和deployment_udp.arxml。可以参照之前demo写。 +
+
+::: tip 注意
+一个服务里可以同时有method, event, field接口。  
+如果觉得需要划分功能，可以用多个功能相应的service.arxml和deployment_udp.arxml。  
+下图为接口入参配置。  
+image:{imgdir}/interface_parameter_configuration.png[test]  
 AddService_Interface为我们定义的一个Interface。
+:::
 
 下图为返回值配置： +
 image:{imgdir}/return_value_configuration.png[test] +
@@ -70,34 +76,35 @@ add2nums要指向到我们定义的函数接口。
 如果不知道某项配置的指向可以点击倒三角然后跳转到定义处。 +
 image:{imgdir}/other_configuration.png[test] 
 
-=== 在impl下面实现自己的代码
+## 在impl下面实现自己的代码
 参考我们demo的实现代码。
 Service端主要接口：OfferService，StopOfferService
 Client端主要接口：FindService
 
-=== 根据model生成配置文件
+## 根据model生成配置文件
 点击pluget里的插件AraComBindingGenerator.pluget 生成SOA需要的源文件和头文件在项目generated文件夹里。 +
 点击pluget里的插件 AraComManifestGenerator.pluget 根据deployment_udp.arxml生成 配置文件**_someip_machine1.json在generated，用于VM之间通信。 +
 点击pluget 里的插件araEmManifestGen.pluget 生成em所需要的一些配置文件，在做这一步时，machine.arxml需要替换为之前备份的machine.arxml，才能执行成功，这个问题我们还需要研究一下。
 
-=== 起qemu1&qemu2
+## 启动qemu1&qemu2
 数字1代表qemu1.
-....
+``` bash
 ara-network -a -N 1
-....
+```
 image:{imgdir}/network_bridge.png[test]
-....
+
+``` bash
 ara-cli RunQemu --start 1 --target-os eblinux
-....
+```
 image:{imgdir}/run_qemu.png[test] 
 
-=== 编译生成container，部署到qemu里
+## 编译生成container，部署到qemu里
 逐步点击Build Targets里的 Build ，CreateAppContainer，DeployAppContainer，DeployTargetFiles。
 
-===执行程序
-....
+##执行程序
+``` bash
 runc list 
-....
+```
 查看已经运行container +
 QEMU1: +
 image:{imgdir}/new_runc_list_qemu1.png[test] +
@@ -117,7 +124,7 @@ Qemu2运行：runc exec -t AddClient /opt/AddClient/bin/AddClient +
 下图可以看出qemu1的service和qemu2的client建立了连接，并且调用函数成功。
 image:{imgdir}/new_log.png[test] +
 
-===停止qemu
-....
+## 停止qemu
+``` bash
 ara-cli RunQemu --stop 1
-....
+```
