@@ -4,7 +4,7 @@ title: Home
 heroImage: /image/EB_logo.jpg
 actions:
   - text: Documents list
-    link: /guide/getting-started.html
+    link: /guide.html
     type: primary
 features:
   - title: Simplicity First

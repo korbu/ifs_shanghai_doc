@@ -4,7 +4,7 @@ title: Home
 heroImage: /image/EB_logo.jpg
 actions:
   - text: 文档列表
-    link: /guide/getting-started.html
+    link: guide.html
     type: primary
   - text: 寻求支持
     link: /guide/

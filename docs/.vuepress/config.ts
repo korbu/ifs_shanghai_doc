@@ -1,6 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import type { DefaultThemeOptions } from '@vuepress/theme-default'
-import { navbar } from './configs'
+import { navbar, sidebar } from './configs'
 
 export default defineUserConfig<DefaultThemeOptions>({
   base: '/ifs_shanghai_doc/',
@@ -32,6 +32,9 @@ export default defineUserConfig<DefaultThemeOptions>({
         selectLanguageName: '简体中文',
         selectLanguageText: '选择语言',
         selectLanguageAriaLabel: '选择语言',
+
+        sidebar: sidebar.zh,
+
         editLinkText: '在 GitHub 上编辑此页',
         contributorsText: '贡献者',
       }
