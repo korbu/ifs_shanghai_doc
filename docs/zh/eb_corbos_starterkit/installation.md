@@ -30,7 +30,7 @@ adg-ADG-2.3-installer.sh
 ```
 路径选择时建议使用默认路径 `~/ara/eb`，直接按下Enter即可。
 执行完毕界面如下图所示。
-image:{imgdir}/run_installer_sh.png[test]
+<img :src="$withBase('/image/eb_corbos_starterkit/installation/run_installer_sh.png')" alt="执行安装脚">
 
 ## 添加环境变量
 ``` bash
@@ -44,7 +44,7 @@ gedit ~/.bashrc
 ara-cli SdkMgr --overwrite --activate --update-packages adg.*.tar.gz
 ```
 在最后可根据自己的当前环境选择相应的 `platform:` 比如 `qemu-x86` 
-image:{imgdir}/Picture1.png[test]
+<img :src="$withBase('/image/eb_corbos_starterkit/installation/select_platform.png')" alt="选择平台">
 
 ## 运行EB corbos Studio
 
@@ -57,13 +57,14 @@ corbos-studio-launcher --target-os eblinux
 图标路径： `~/ara/eb/tools/studio/ADG-2.2/EB_corbos_Studio`
 
 ### 安装了多个corbos/adg版本
-默认会打开最新安装的EB corbos Stuido版本，如果有特殊需求，可以修改~/.ara/config.ini文件的配置
+默认会打开最新安装的EB corbos Stuido版本，如果有特殊需求，可以修改`~/.ara/config.ini`文件的配置
 
 ## 选择workspace
 自行选择workspace路径，下图是示例路径：`~/ara/eb/workspace`
-image:{imgdir}/Picture2.png[test]
+<img :src="$withBase('/image/eb_corbos_starterkit/installation/select_workspace.png')" alt="选择工作区">
 
 ## 准备adg demo
-adg demo路径为： `~/ara/eb/adaptivecore/source/git/ara_Demos/impl/demonstrator/templates/demos/` +
-把5个demos拷贝进workspace。下图是示例路径 `~/ara/eb/workspace/adg/demo` 
-image:{imgdir}/Picture3.png[test]
+adg demo路径为： `~/ara/eb/adaptivecore/source/git/ara_Demos/impl/demonstrator/templates/demos/`  
+把5个demos拷贝进workspace。  
+下图是示例路径 `~/ara/eb/workspace/adg/demo` 
+<img :src="$withBase('/image/eb_corbos_starterkit/installation/prepare_adg_demo.png')" alt="准备Demo">

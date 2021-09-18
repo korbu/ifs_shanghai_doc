@@ -8,6 +8,8 @@ export const zh: SidebarConfig = {
           '/zh/eb_corbos_starterkit/introduction.md',
           '/zh/eb_corbos_starterkit/installation.md',
           '/zh/eb_corbos_starterkit/demo_ara_com.md',
+          '/zh/eb_corbos_starterkit/trouble_shooting.md',
+          '/zh/eb_corbos_starterkit/ara_cli.md'
         ],
       },
     ],
