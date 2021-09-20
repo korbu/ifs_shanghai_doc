@@ -9,7 +9,7 @@
 |Display_Manager |TBD |ara:Com, ara:EM |
 |phm_callback |TBD |ara:EM |
 
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/architecture.png')" alt="交通信号场景演示程序架构图">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/architecture.png')" alt="交通信号场景演示程序架构图">
 
 ## 准备Demo(命令行操作)
 ``` bash
@@ -24,10 +24,10 @@ ara-cli Application --generate-cmake --app ~/ara/eb/workspace/adg/demo/Sensor_Pr
 ### UI界面操作
 1. File->import
 2. Select an import wizard: General/Existing Projects into Workspace
-    <img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/import_project.png')" alt="General/Existing Projects into Workspace">
+    <img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/import_project.png')" alt="General/Existing Projects into Workspace">
 3. Select root directory: `~/ara/eb/workspace/adg/demo/Sensor_Preprocessor`
 4. Copy project into workspace选项在项目不在workspace目录的时候需要选中
-    <img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/select_root_directory.png')" alt="Copy project into workspace">
+    <img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/select_root_directory.png')" alt="Copy project into workspace">
 
 ### 目录结构介绍
 + Build Targets： 里面是一些编译操作
@@ -37,7 +37,7 @@ ara-cli Application --generate-cmake --app ~/ara/eb/workspace/adg/demo/Sensor_Pr
 + Model： 放的是该工程依赖ADG的arxml配置文件
 + Plugets： 里的插件可以让我们根据model里的arxml生成配置文件或者代码，具体可以看user guide
 + Test： 里放的是单元测试代码
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/folder_structure.png')" alt="目录结构">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/folder_structure.png')" alt="目录结构">
 
 ## 运行与ADG相关的pluget
 + 必要插件：araEmManifestGen.pluget, araComBindingGenerator.pluget
@@ -73,17 +73,17 @@ ara-cli RunPluget --name araPmManifestGen.pluget \
 
 ### UI界面操作
 执行AraComBindingGenerator.pluget,点击OK
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/execute_pluget_AraComBindingGenerator.png')" alt="执行AraComBindingGenerator">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/execute_pluget_AraComBindingGenerator.png')" alt="执行AraComBindingGenerator">
 此步骤会在generated文件夹下生成代码，给Service或Client使用
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/generate_code.png')" alt="generate_code">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/generate_code.png')" alt="generate_code">
 
 执行AraComManifestGenerator.pluget,点击OK  
 此步骤会在generated下生成config文件夹，里面有sensor_preprocessor_someip_machine1.json文件
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/execute_pluget_AraComManifestGenerator.png')" alt="执行AraComManifestGenerator">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/execute_pluget_AraComManifestGenerator.png')" alt="执行AraComManifestGenerator">
 
 执行araEmManifestGen,点击OK  
 此步骤会在generated文件夹生成EM相关的配置文件
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/execute_pluget_araEmManifestGen.png')" alt="执行araEmManifestGen">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/execute_pluget_araEmManifestGen.png')" alt="执行araEmManifestGen">
 
 ## 编译工程
 
@@ -119,14 +119,14 @@ ara-cli CreateAppContainer --app-dir  ~/ara/eb/workspace/adg/demo/Sensor_Preproc
 ``` bash
 ara-network -a -N 1
 ```
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/network_bridge.png')" alt="network_bridge">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/network_bridge.png')" alt="network_bridge">
 
 ``` bash
 ara-cli RunQemu --start 1 --target-os eblinux
 ```
 
 若执行失败，再次执行即可
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/run_qemu.png')" alt="run_qemu">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/run_qemu.png')" alt="run_qemu">
 
 ## 登陆qemu
 
@@ -167,10 +167,10 @@ runc list
 ```
 
 Qemu1:
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/runc_list_qemu1.png')" alt="runc_list_qemu1">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/runc_list_qemu1.png')" alt="runc_list_qemu1">
 
 Qemu2:
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/runc_list_qemu2.png')" alt="runc_list_qemu2">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/runc_list_qemu2.png')" alt="runc_list_qemu2">
 
 ### 命令行操作
 Qemu1:
@@ -192,15 +192,15 @@ runc exec Sensor_handler /opt/Sensor_handler/bin/Sensor_handler
 + 右1：Sensor_Preprocessor，在Sensor_handler没起之前,FindService结果为0，否则为1
 + 右2：Sensor_handler
 
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/communication_processes.png')" alt="communication_processes">
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/demo_logo.png')" alt="demo_logo">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/communication_processes.png')" alt="communication_processes">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/demo_logo.png')" alt="demo_logo">
 
 ### UI界面操作
 右击/launch/Sensor_Preprocessor_run.launch -> Run As -> Sensor_Preprocessor_run  
 弹窗点击yes，会在Console看到程序的log。
 
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/Sensor_Preprocessor_run.png')" alt="Sensor_Preprocessor_run">
-<img :src="$withBase('/image/eb_corbos_starterkit/demo_ara_com/Sensor_Preprocessor_log.png')" alt="Sensor_Preprocessor_log">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/Sensor_Preprocessor_run.png')" alt="Sensor_Preprocessor_run">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/Sensor_Preprocessor_log.png')" alt="Sensor_Preprocessor_log">
 
 ## 停止qemu
 

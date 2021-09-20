@@ -5,7 +5,7 @@
 ps ww | grep com_daemon
 ```
 查看com_daemon是否把配置文件加上。
-<img :src="$withBase('/image/eb_corbos_starterkit/trouble_shooting/check_config.png')" alt="检查配置">
+<img :src="$withBase('/images/eb_corbos_starterkit/trouble_shooting/check_config.png')" alt="检查配置">
 
 `/usr/bin/com_daemon` 应该是-m 选项， 来指定load的manifest file,  
 如果不是，则需要执行
@@ -13,7 +13,7 @@ ps ww | grep com_daemon
 systemctl restart com-daemon-container
 ```
 来重启com-daemon
-<img :src="$withBase('/image/eb_corbos_starterkit/trouble_shooting/restart_com_daemon.png')" alt="检查配置">
+<img :src="$withBase('/images/eb_corbos_starterkit/trouble_shooting/restart_com_daemon.png')" alt="检查配置">
 
 ## qemu 与外部网络通信 
 需要将`qemu`的网卡作为master 来桥接， 执行
@@ -34,7 +34,7 @@ ssh -o StrictHostKeyChecking=no root@fd00::eb:1
 ``` bash
 ps ww | grep com_daemon 
 ```
-<img :src="$withBase('/image/eb_corbos_starterkit/trouble_shooting/com_daemon.png')" alt="检查配置">
+<img :src="$withBase('/images/eb_corbos_starterkit/trouble_shooting/com_daemon.png')" alt="检查配置">
 
 可以看到默认的ipv6 地址， 需要将其改成ipv4 地址:  
 
@@ -47,7 +47,7 @@ runc exec -t adaptivecore-container sh
 ``` bash
 ifconfig 
 ```
-<img :src="$withBase('/image/eb_corbos_starterkit/trouble_shooting/ifconfig.png')" alt="检查配置">
+<img :src="$withBase('/images/eb_corbos_starterkit/trouble_shooting/ifconfig.png')" alt="检查配置">
 
 可以看到ipv4 地址： `192.168.7.126` 
 

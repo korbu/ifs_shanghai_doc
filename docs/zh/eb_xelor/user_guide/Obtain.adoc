@@ -1,5 +1,4 @@
-[[Obtain]]
-=== 获取EB xelor
+# 获取EB xelor
 你可以根据以下方式获取EB xelor
 
 .Links to EB xelor deliveries and sources
