@@ -1,41 +1,37 @@
-[[Flashing]]
-=== 烧写
+# 烧写
 EB xelor以Conan包形式提供二进制文件。
 你可以手动或者通过调用python库的方式进行烧写。
 
 当前只在原生Linux环境进行过验证，Cygwin或者虚拟机环境，或者是容器中，理论上也可行。
 
-[NOTE]
-====
+::: tip 提示
 所需的Python库列在
 '/tools/lib/python/ebcoreflashlib/' 目录下的requirements.txt文件中.
 
-....
+``` bash
 sudo pip3 install -r requirements.txt
-....
+```
 
 Linux环境下，以下包也是必须的：
 fastboot, ethtool, expect
-....
+``` bash
 sudo apt install -y fastboot ethtool expect
-....
+```
 
 当前只在Linux环境进行过验证，如果你在Windoes环境设置了fastboot的PATH环境变量，理论上也是可行的。
-====
+:::
 
-=== 使用提供的库文件烧写
+# 使用提供的库文件烧写
 
-==== Rcar H3的库文件
+## Rcar H3的库文件
 
-[NOTE]
-.Notes before flashing H3 firmware
-====
+::: tip 烧写H3之前需要注意的事
 检查H3
 目标板上有正确的CPLD (Complex Programmable Logic Device, used for configuring the SoC's mode pins) 软件版本(20161005)。
 
 如果软件版本低于20161005，请先升级。
 如果软件版本高于20161005, 考虑到可能会有时钟问题，不推荐降级处理 (有可能导致目标板无法启动)。
-====
+:::
 
 作为前提条件的是，你需要提前准备好Renesas H3的flash writer并且flasher可以调用到，你可以通过以下方式手动下载flash writer进行验证。
 
@@ -60,17 +56,16 @@ The config file can be validated against a JSON schema.
 During the write process it can be necessary to operate some of the board's dip switches.
 The library can trigger this automatically when given a set of callback functions doing the
 actual switching (use --hw parameter). If you do not work in an automated test environment, you need
-to apply the switches as described in Step 1 of <<ManualFlashingH3>>.
+to apply the switches as described in Step 1 of [ManualFlashingH3].
 
-[NOTE]
-====
+::: tip 注意
 Remove the board's main power before changing the mode switches. The mode switches are read by
 the CPLD when the board first gets power, not when turning it on by pressing the power button.
-====
+:::
 
 The library is implemented in Python and can be called directly from another Python program or from the command line.
 
-*Prerequisites* for executing the flasher script:
+**Prerequisites** for executing the flasher script:
 
 * Serial connection to the board
 * Ethernet (for fastboot eMMC flashing and SSH file transfer)
@@ -79,7 +74,7 @@ The library is implemented in Python and can be called directly from another Pyt
 * Python 3 installed (at least version 3.8)
 * Configuration file according to schema defined in `EBcore-main/tools/lib/python/ebcoreflashlib/JSON_flashlayout_schema.json`
 
-==== S32G的库文件
+## S32G的库文件
 
 作为前提条件，你需要从NXP获取S32G flashing tool，然后安装。
 
@@ -88,15 +83,10 @@ flashing tool路径需要在manifest文件中设置。
 为了让flasher工作，你还需要设置S32G板子上的跳线，使之工作在Serial Boot模式。
 如果想用eMMC，你需要调整J50跳线。The silk screen near the jumper describes how to set it.
 
-[width="70%"]
-|===
-| Mode | SW14 | SW15
-
-| Serial Boot Mode | On-Off | Off-Off
-
-| Normal Boot Mode| Off-Off | Off-Off
-
-|===
+| Mode | SW14 | SW15 |
+| -- | -- | -- |
+| Serial Boot Mode | On-Off | Off-Off|
+| Normal Boot Mode| Off-Off | Off-Off|
 
 Flash库提供QSPI, eMMC, SD卡以及Linux文件系统的擦写接口，既可以单用户使用或者给自动化工具使用
 (e.g. a Jenkins setup).
@@ -111,13 +101,12 @@ Fastboot传输需要串口链接做初始化。
 
 库文件由Python语言编写，你可以通过命令行或在其他Python脚本中调用。
 
-[NOTE]
-====
+::: tip 注意
 脚本已在Linux环境测试。
 如果在PATH中设置了fastboot工具，Windows环境也能工作。
-====
+:::
 
-执行flasher脚本的 *前提条件* :
+执行flasher脚本的 **前提条件** :
 
 * 与板子之间的串口连接
 * 以太网连接 (for fastboot eMMC flashing and SSH file transfer)
@@ -127,7 +116,7 @@ Fastboot传输需要串口链接做初始化。
 * 遵从 `EBcore-main/tools/lib/python/ebcoreflashlib/JSON_flashlayout_schema.json` schema的配置文件
 
 
-==== 配置文件
+## 配置文件
 
 包含烧写区块，分组，网络，内存地址等信息。
 配置文件配置项如下:
@@ -162,26 +151,26 @@ MX25UM51245G_MEM_SIZE:: QSPI memory大小 - S32G only
 If a parameter is missing or specified incorrectly, it will very probably lead to an error in the flashing execution.
 
 示例可参考：
-....
+```
 EBcore-main/test/software/config/
 EBcore-main/tools/lib/python/ebcoreflashlib/examples/
-....
+```
 
 [NOTE]
-====
+##
 如果你在配置文件中使用绝对路径，请将 `path_to_firmware`
 留空！
-====
+##
 
-==== 命令行调用
+## 命令行调用
 *使用方法:*
-....
+``` bash
 python3 EBcore-main/tools/flasher/ebCoreFlasher.py \
 --manifest_file path_to_config_file.json \
 --flash_method method \
 [optional parameters]
-....
-*Parameters:*
+```
+**参数:**
 
 --manifest_file:: Path to the config file.
 --flash_method:: Flash method to be used for the area given: `fastboot`, `serial` or `file_installation`
@@ -205,12 +194,12 @@ python3 EBcore-main/tools/flasher/ebCoreFlasher.py \
 
 Command line parameters override those in the config file.
 
-*Example calls* +
+**示例**  
 (assuming your working directory is `EBcore-main/tools/flasher` and the binaries are stored in
 `../../../../artifacts` (or similar)):
 
 Writing QSPI firmware to H3 board:
-....
+``` bash
 python3 ./ebCoreFlasher.py \
 --manifest_file ../../test/software/config/Fw_RcarH3_8GB.json \
 --flash_method serial \
@@ -218,7 +207,7 @@ python3 ./ebCoreFlasher.py \
 --path_to_firmware=../../../../artifacts \
 --target_type r-car-h3 \
 --hw /platform.json
-....
+```
 
 Writing all eMMC partitions of an H3 board:
 ....
@@ -249,7 +238,7 @@ python3 ./tools/flasher/ebCoreFlasher.py \
 --path_to_firmware=../../artifacts \
 ....
 
-==== 使用python脚本调用
+## 使用python脚本调用
 
 Main file of the library is
 ....
@@ -290,7 +279,7 @@ The option "StrictHostKeyChecking=no" is used to ignore key errors.
 If you do not use this option you must have the correct host keys installed on the target.
 
 [[ManualFlashingH3]]
-=== Rcar H3 firmware 手动烧写
+# Rcar H3 firmware 手动烧写
 
 *Prerequisites:*
 
@@ -304,10 +293,10 @@ If you do not use this option you must have the correct host keys installed on t
 Hardware and Software Flow Control must be turned off in Minicom serial port setup.
 
 [NOTE]
-====
+##
 Remove the board's main power before changing the mode switches. The mode switches are read by
 the CPLD when the board first gets power, not when turning it on by pressing the power button.
-====
+##
 
 Step 1 +
 Start Minicom. Prepare Board and flash writer:
