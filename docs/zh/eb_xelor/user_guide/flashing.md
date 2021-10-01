@@ -156,11 +156,10 @@ EBcore-main/test/software/config/
 EBcore-main/tools/lib/python/ebcoreflashlib/examples/
 ```
 
-[NOTE]
-##
+::: tip 注意
 如果你在配置文件中使用绝对路径，请将 `path_to_firmware`
 留空！
-##
+:::
 
 ## 命令行调用
 *使用方法:*
@@ -289,16 +288,16 @@ If you do not use this option you must have the correct host keys installed on t
 
 * Linux host with Minicom terminal emulator (`sudo minicom -D ttyx`)
 
-[WARNING]
+::: warning 警告
 Hardware and Software Flow Control must be turned off in Minicom serial port setup.
+:::
 
-[NOTE]
-##
+::: tip 提示
 Remove the board's main power before changing the mode switches. The mode switches are read by
 the CPLD when the board first gets power, not when turning it on by pressing the power button.
-##
+:::
 
-Step 1 +
+Step 1  
 Start Minicom. Prepare Board and flash writer:
 
 * Put SW6(1-4) dip switch to 0100 and SW1 to off.
@@ -313,10 +312,10 @@ Then choose file for uploading e.g.
 `AArch32_Flash_writer_SCIF_DUMMY_CERT_E6300400_m3ulcb.mot`.
 After upload finished press any key.
 
-Step 2 +
+Step 2  
 First flash the bootparam_sa0.srec.
 n console execute `xls2` command (load program to hyper flash) and provide the following inputs:
-....
+``` bash
 1
 y
 y
@@ -326,12 +325,12 @@ e6320000
 type "ctrl+A S" and select upload method "ascii", then choose file for uploading 
 "bootparam_sa0.srec", after upload finished press any key
 y
-....
+```
 
-Step 3 +
+Step 3  
 Next flash the ipl1.srec.
 In console execute `xls2` command (load program to hyper flash) and provide the following inputs:
-....
+``` bash
 1
 y
 y
@@ -341,12 +340,12 @@ e6302000
 type "ctrl+A S" and select upload method "ascii", then choose file for uploading 
 "ipl1.srec", after upload finished press any key
 y
-....
+```
 
-Step 4 +
+Step 4  
 Next flash the bl2.srec.
 In console execute `xls2` command (load program to hyper flash) and provide the following inputs:
-....
+``` bash
 1
 y
 y
@@ -356,12 +355,12 @@ e6330000
 type "ctrl+A S" and select upload method "ascii", then choose file for uploading 
 "bl2.srec", after upload finished press any key
 y
-....
+```
 
-Step 5 +
+Step 5  
 Next flash the bl31.srec.
 In console execute `xls2` command (load program to hyper flash) and provide the following inputs:
-....
+``` bash
 1
 y
 y
@@ -371,12 +370,12 @@ y
 type "ctrl+A S" and select upload method "ascii", then choose file for uploading 
 "bl31.srec", after upload finished press any key
 y
-....
+```
 
-Step 6 +
+Step 6  
 Next flash the u-boot-elf-h3ulcb.srec.
 In console execute `xls2` command (load program to hyper flash) and provide the following inputs:
-....
+``` bash
 1
 y
 y
@@ -386,12 +385,12 @@ y
 type "ctrl+A S" and select upload method "ascii", then choose file for uploading 
 "u-boot-elf-h3ulcb.srec", after upload finished press any key
 y
-....
+```
 
-Step 7 +
+Step 7  
 Put SW6(1-4) dip switch to 1010, then power off and on the hw.
 If the firmware is booting correctly, the output should look like this:
-....
+``` bash
 NOTICE:  (IPL1) BL2: DDR3200(rev.0.37)
 NOTICE:  (IPL1) BL2: [COLD_BOOT]
 NOTICE:  (IPL1) BL2: DRAM Split is OFF
@@ -432,4 +431,4 @@ Err:   serial@e6e88000
 Net:   eth0: ethernet@e6800000
 Hit any key to stop autoboot:  0
 =>                           
-....
+```
