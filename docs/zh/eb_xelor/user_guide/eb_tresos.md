@@ -201,7 +201,7 @@ This step will just download the RT_RefApp *elf* file.
 
 ### Build the RT_RefApp binaries
 ::: tip 提示
-Please refer to <<Valeria>> for building the RT_RefApp locally.
+Please refer to [Valeria](valeria.md) for building the RT_RefApp locally.
 :::
 
 This chapter will show you how to build the RT_RefApp manually or with CI.

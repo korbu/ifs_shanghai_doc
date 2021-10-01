@@ -4,10 +4,10 @@ EB xelor 提供 EB corbos Hypervisor bin文件的Conan包。
 
 ## 获取镜像文件
 
-*前提条件:* +
-已安装Conan, 详细请参考 <<Docker>>.
+**前提条件:** +
+已安装Conan, 详细请参考 [Docker](docker.md).
 
-如果不用 <<Valeria>> 来构建, 需要注意的是Conan profile使用conan user和connan channel。
+如果不用 [Valeria](valeria.md) 来构建, 需要注意的是Conan profile使用conan user和connan channel。
 你需要在 `config/valeria/r-car-h3/profiles` 目录下创建 `get_user_channel` 文件并指定user 和 channel。
 例如：
 ```
