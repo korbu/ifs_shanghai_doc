@@ -7,6 +7,7 @@
 + [常见问题](eb_corbos_starterkit/trouble_shooting.md)  
 
 ## EB xelor
+敬请期待 (☆▽☆)
 
 ## Classic AUTOSAR
 敬请期待 (☆▽☆)
