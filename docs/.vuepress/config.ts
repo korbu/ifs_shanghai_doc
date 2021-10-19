@@ -13,7 +13,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     '/zh/': {
       lang: 'zh-CN',
       title: 'Elektrobit 文档中心',
-      description: '这里有所有你希望阅读到的Elektrobit公开文档以及各种各样的Autosar知识👍',
+      description: '这里有所有你希望阅读到的Elektrobit公开文档以及各种各样的AUTOSAR知识👍',
     },
   },
 
