@@ -8,8 +8,8 @@
 
 ## EB xelor
 
-## Classic Autosar
+## Classic AUTOSAR
 敬请期待 (☆▽☆)
 
-## Adaptive Autosar
+## Adaptive AUTOSAR
 敬请期待 (☆▽☆)

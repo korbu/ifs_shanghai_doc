@@ -12,6 +12,6 @@ features:
   - title: Update always
     details: You can view all the latest document without asking for delivery
   - title: As you like
-    details: Wanna know more about EB products information and Autosar knowledges? Just tell us, we will provide here!
+    details: Wanna know more about EB products information and AUTOSAR knowledges? Just tell us, we will provide here!
 footer: MIT Licensed | Copyright © 2021-present EB Shanghai Team
 ---
