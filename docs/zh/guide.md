@@ -10,7 +10,10 @@
 敬请期待 (☆▽☆)
 
 ## Classic AUTOSAR
-敬请期待 (☆▽☆)
++ [Time Sync 时间同步基础介绍](https://zhuanlan.zhihu.com/p/417007241)
++ [看门狗WdgM模块(Watchdog Manager)基础介绍](https://zhuanlan.zhihu.com/p/416366761)
++ [DLT模块(Log&Trace)基础介绍](https://zhuanlan.zhihu.com/p/402576650)
++ [S2S(Signal to Service) 信号转服务方案](https://zhuanlan.zhihu.com/p/428421655)
 
 ## Adaptive AUTOSAR
-敬请期待 (☆▽☆)
++ [Platform Health Management平台健康管理 基础介绍](https://zhuanlan.zhihu.com/p/422206623)
