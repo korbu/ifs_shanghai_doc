@@ -18,18 +18,21 @@ ara-cli Application --create-project --app ~/ara/eb/workspace/adg/demo/AddClient
 
 ## 修改CMakeList
 定义变量：
+``` makefile
 # This must be explicitly set when the project installs files for just 1 component (not devel)
 set(CPACK_COMPONENTS_ALL runtime)  
+```
 <img :src="$withBase('/images/eb_corbos_starterkit/create_project/modify_CMakelist.png')" alt="修改CMakeList">
 
 ## 修改project_config.json
-### 修改deploy-files那一栏的内容
+### 修改deploy-files一栏的内容
+需要将`<project name>`替换为你自己项目的名称。
 ``` json
 "deploy-files": [
     {
         "items": [
             {
-                "deploy-files-list": ["generated/config/<projectname>(小写)_someip_machine1.json"],
+                "deploy-files-list": ["generated/config/<project name>_someip_machine1.json"],
                 "deploy-files-dest": "/data/target/etc/adaptive/ara_Com/daemon_1"
             }
         ],
@@ -87,21 +90,21 @@ Service端主要接口：OfferService，StopOfferService
 Client端主要接口：FindService
 
 ## 根据model生成配置文件
-点击pluget里的插件AraComBindingGenerator.pluget 生成SOA需要的源文件和头文件在项目generated文件夹里。  
-点击pluget里的插件 AraComManifestGenerator.pluget 根据deployment_udp.arxml生成 配置文件**_someip_machine1.json在generated，用于VM之间通信。  
-点击pluget 里的插件araEmManifestGen.pluget 生成em所需要的一些配置文件，在做这一步时，machine.arxml需要替换为之前备份的machine.arxml。
+点击pluget里的插件 `AraComBindingGenerator.pluget` 生成SOA需要的源文件和头文件在项目 `generated` 文件夹里。  
+点击pluget里的插件 `AraComManifestGenerator.pluget` 根据 `deployment_udp.arxml` 生成 配置文件 `**_someip_machine1.json` 在generated，用于VM之间通信。  
+点击pluget 里的插件 `araEmManifestGen.pluget` 生成em所需要的一些配置文件，在做这一步时，`machine.arxml` 需要替换为之前备份的machine.arxml。
 
 ## 启动qemu1&qemu2
 数字1代表qemu1.
 ``` bash
 ara-network -a -N 1
 ```
-<img :src="$withBase('/images/eb_corbos_starterkit/create_project/network_bridge.png')" alt="启动QEMU">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/network_bridge.png')" alt="网络设置">
 
 ``` bash
 ara-cli RunQemu --start 1 --target-os eblinux
 ```
-<img :src="$withBase('/images/eb_corbos_starterkit/create_project/run_qemu.png')" alt="启动QEMU">
+<img :src="$withBase('/images/eb_corbos_starterkit/demo_ara_com/run_qemu.png')" alt="启动QEMU">
 
 ## 编译生成container，部署到qemu里
 逐步点击Build Targets里的 Build ，CreateAppContainer，DeployAppContainer，DeployTargetFiles。
